@@ -1,19 +1,16 @@
 <template>
-    <div id="hello">
-        <h1>I am a title.</h1>
-        <a> written by {{ author }} </a>
+    <div class="hello">
+        <h1>{{ msg }}</h1>
     </div>
 </template>
 
-<script type="text/javascript">
+<script>
     export default {
+        name: 'hello',
         data () {
             return {
-                author: "微信公众号"
+                msg: '欢迎！'
             }
         }
     }
 </script>
-
-<style>
-</style>
