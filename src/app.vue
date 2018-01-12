@@ -183,7 +183,25 @@ export default {
     },
     mounted : function () {
         console.log('mounted---');
-        console.log(fluidPlayer('my-video'));
+
+        // https://github.com/fluid-player/fluid-player
+
+        var testVideo = fluidPlayer(
+            'my-video',
+            'http://example.com/vast.xml',
+            {
+                timelinePreview: {
+                    file: 'thumbnails.vtt',
+                    type: 'VTT'
+                },
+                layout: 'default',
+                vastLoadedCallback: function() {console.log('vast loaded')},
+                noVastVideoCallback: function() {console.log('no vast')},
+                vastVideoSkippedCallback: function() {console.log('vast skipped')},
+                vastVideoEndedCallback: function() {console.log('vast ended')}
+            }
+        );
+        console.log(testVideo);
     },
     components : { hello }
 }
