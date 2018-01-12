@@ -21,8 +21,10 @@ import AppStyles from './css/app.css'
 // Import Routes
 import Routes from './routes.js'
 
+
 // Import App Component
 import App from './app'
+
 
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
@@ -40,6 +42,6 @@ new Vue({
   },
   // Register App Component
   components: {
-    app: App
+    app: App,
   }
 });

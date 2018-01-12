@@ -141,6 +141,12 @@
         <f7-pages>
           <f7-page login-screen>
             <f7-login-screen-title>Login</f7-login-screen-title>
+
+            <!--<video id='my-video' controls style="width: 640px; height: 360px;">-->
+              <!--<source src='vid.mp4' type='video/mp4' />-->
+
+              <hello></hello>
+            <!--</video>-->
             <f7-list form>
               <f7-list-item>
                 <f7-label>Username</f7-label>
@@ -166,5 +172,14 @@
 </template>
 
 <script>
-export default {}
+
+    import hello from './components/hello.vue'
+
+export default {
+    created() {
+//        var testVideo = fluidPlayer('my-video');
+//        console.log('The time is ',testVideo);
+    },
+    components: { hello }
+}
 </script>
