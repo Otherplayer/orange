@@ -112,6 +112,17 @@
       </f7-view>
     </f7-views>
 
+
+<div class="popup popup-about">
+    <div class="block">
+      <p>About</p>
+      <!-- Close Popup -->
+      <p><a class="link popup-close" href="#">Close popup</a></p>
+      <p>Lorem ipsum dolor sit amet...</p>
+    </div>
+  </div>
+
+
     <!-- Popup -->
     <f7-popup id="popup">
       <f7-view navbar-fixed>
@@ -151,6 +162,10 @@ import hello from './components/hello.vue'
 export default {
     created() {
         console.log('created---');
+
+
+
+
     },
     data () {
         return {
@@ -208,11 +223,26 @@ export default {
 
 
 
+        var $$ = Dom7;
+        // DOM events for About popup
+        $$('.popup').on('popup:open', function (e, popup) {
+          console.log('About popup open');
+        });
+        $$('.popup').on('popup:opened', function (e, popup) {
+          console.log('About popup opened');
+        });
+        $$('.popup').on('popup:close', function (e, popup) {
+          console.log('About popup close');
+        });
+        $$('.popup').on('popup:closed', function (e, popup) {
+          console.log('About popup closed');
+        });
+
     },
     methods: {
         gotoVideoPage: function (item,event) {
             console.log(item);
-            this.$router.push('video');
+            this.$router.push('about');
         }
     },
     components : { hello }
