@@ -1,3 +1,11 @@
 /* =========
 Your custom styles go here
  ========= */
+
+.orange {
+    color: orange;
+}
+
+.layout-dark .content-block-title {
+    color: orange;
+}

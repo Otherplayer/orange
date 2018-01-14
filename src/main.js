@@ -21,6 +21,30 @@ import AppStyles from './css/app.css'
 // Import Routes
 import Routes from './routes.js'
 
+// Import Resource
+import VueResource from 'vue-resource'
+Vue.use(VueResource);
+
+// Vue.http.headers.common['token'] = 'YXBpOnBhc3N3b3Jk';
+
+Vue.http.interceptors.push((request, next) => {
+
+    // request.headers.set('token', token); //setting request.headers
+    // ...
+    // 请求发送前的处理逻辑
+    // ...
+    next((response) => {
+
+        console.log('-----------',response);
+
+        // ...
+        // 请求发送后的处理逻辑
+        // ...
+        // 根据请求的状态，response参数会返回给successCallback或errorCallback
+        return response
+    })
+})
+
 
 // Import App Component
 import App from './app'
