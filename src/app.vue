@@ -71,7 +71,7 @@
 
 
             <div class="video-container">
-                <div class="video-item" v-for="item in videos" v-on:click="gotoVideoPage">
+                <div class="video-item" v-for="item in videos" link="/video/item.imageUrl/item.title">
                      <img class="video-img" v-bind:src="item.imageUrl">
                      <div class="video-title">{{ item.title }}</div>
                 </div>
@@ -81,7 +81,7 @@
 
             <f7-block-title>Navigation</f7-block-title>
             <f7-list>
-              <f7-list-item link="/about/" title="About"></f7-list-item>
+              <f7-list-item link="/video/abc" title="Video"></f7-list-item>
               <f7-list-item link="/form/" title="Form"></f7-list-item>
               <f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>
             </f7-list>
@@ -189,8 +189,6 @@ export default {
                 layout:'browser',
             }
         );
-        console.log(testVideo);
-
 
 
 
@@ -198,7 +196,10 @@ export default {
         this.$http.post('http://52.14.107.3:80/video/content/list',{channelId:'1'},header).then(response => {
 
             // get body data
-            console.log(response.body);
+            var datas = response.body.result.list;
+            //this.videos = datas;
+            console.log(datas);
+
 
           }, response => {
             // error callback
