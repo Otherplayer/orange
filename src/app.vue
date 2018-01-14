@@ -99,6 +99,7 @@
             <f7-block-title>Modals</f7-block-title>
             <f7-block>
               <f7-grid>
+              <button class="col button open-alert">Alert</button>
                 <f7-col width="50">
                   <f7-button open-popup="#popup">Popup</f7-button>
                 </f7-col>
@@ -111,16 +112,6 @@
         </f7-pages>
       </f7-view>
     </f7-views>
-
-
-<div class="popup popup-about">
-    <div class="block">
-      <p>About</p>
-      <!-- Close Popup -->
-      <p><a class="link popup-close" href="#">Close popup</a></p>
-      <p>Lorem ipsum dolor sit amet...</p>
-    </div>
-  </div>
 
 
     <!-- Popup -->
@@ -197,6 +188,18 @@ export default {
     mounted : function () {
         console.log('mounted---');
 
+
+            var app = new Framework7();
+            console.log(app);
+            var $$ = Dom7;
+            // Alert
+            $$('.open-alert').on('click', function () {
+              //app.alert('Hello');
+
+              app.popup('.popup');
+            });
+
+
         var testVideo = fluidPlayer(
             'my-video',
             '',
@@ -242,7 +245,18 @@ export default {
     methods: {
         gotoVideoPage: function (item,event) {
             console.log(item);
-            this.$router.push('about');
+
+
+
+
+
+
+
+
+
+
+
+            //this.$router.load({pageName: 'main'})
         }
     },
     components : { hello }
