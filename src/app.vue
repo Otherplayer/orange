@@ -61,11 +61,24 @@
                 <f7-link icon="icon-bars" open-panel="right"></f7-link>
               </f7-nav-right>
             </f7-navbar>
+
+
             <!-- Page Content -->
             <f7-block-title>Welcome to my App</f7-block-title>
             <f7-block inner>
               <p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>
             </f7-block>
+
+
+            <div class="video-container">
+                <div class="video-item" v-for="item in videos">
+                     <img class="video-img" v-bind:src="item.imageUrl">
+                     <div class="video-title">{{ item.title }}</div>
+                </div>
+            </div>
+
+
+
             <f7-block-title>Navigation</f7-block-title>
             <f7-list>
               <f7-list-item link="/about/" title="About"></f7-list-item>
@@ -141,7 +154,30 @@ export default {
     },
     data () {
         return {
-                src : 'https://cv.phncdn.com/videos/201801/02/148248372/240P_400K_148248372.mp4?a5dcae8e1adc0bdaed975f0d60fb5e050d523df0cca6435032db1bab0a4b451d8a412585437d6eae1df116efbf02055b919ff38f1363fc67bfd8537f45abf2df6554cb0e19305fca8319e1b5b907993b06e07375e162df0455e164875471f170a9d6512f6279260d8f5f71d71530c6604e3a70c7e9e8a9d18a1f6c'
+                src : 'https://cv.phncdn.com/videos/201801/02/148248372/240P_400K_148248372.mp4?a5dcae8e1adc0bdaed975f0d60fb5e050d523df0cca6435032db1bab0a4b451d8a412585437d6eae1df116efbf02055b919ff38f1363fc67bfd8537f45abf2df6554cb0e19305fca8319e1b5b907993b06e07375e162df0455e164875471f170a9d6512f6279260d8f5f71d71530c6604e3a70c7e9e8a9d18a1f6c',
+                videos: [
+                        			{
+                        				"channelId": 1,
+                        				"id": 39,
+                        				"imageUrl": "http://d.hiphotos.baidu.com/image/h%3D300/sign=9af99ce45efbb2fb2b2b5e127f4b2043/a044ad345982b2b713b5ad7d3aadcbef76099b65.jpg",
+                        				"sortDate": 1515943735000,
+                        				"status": 1,
+                        				"title": "Hot Teen Stepsister Stuck In Sink And Fucked",
+                        				"typeId": 4,
+                        				"videoUrl": "http://www.xvideos.com/video32776479/best-2018-01/0/hot_teen_stepsister_stuck_in_sink_and_fucked"
+                        			},
+                        			{
+                        				"channelId": 1,
+                        				"id": 40,
+                        				"imageUrl": "http://d.hiphotos.baidu.com/image/h%3D300/sign=9af99ce45efbb2fb2b2b5e127f4b2043/a044ad345982b2b713b5ad7d3aadcbef76099b65.jpg",
+                        				"sortDate": 1515943735000,
+                        				"status": 1,
+                        				"title": "Stranger Jerked and suck me in the train",
+                        				"typeId": 4,
+                        				"videoUrl": "http://www.xvideos.com/video32893295/best-2018-01/0/stranger_jerked_and_suck_me_in_the_train"
+                        			},
+
+                        		]
             }
     },
     mounted : function () {

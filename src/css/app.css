@@ -6,6 +6,24 @@ Your custom styles go here
     color: orange;
 }
 
+
+
 .layout-dark .content-block-title {
     color: orange;
+}
+
+
+.video-container {
+    width: 100%;
+}
+.video-container .video-item {
+
+}
+.video-container .video-item .video-img {
+    width: 100%;
+}
+.video-container .video-item .video-title {
+    color: orange;
+    padding: 5px 10px;
+    min-height: 40px;
 }
