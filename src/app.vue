@@ -71,7 +71,7 @@
 
 
             <div class="video-container">
-                <div class="video-item" v-for="item in videos">
+                <div class="video-item" v-for="item in videos" v-on:click="gotoVideoPage">
                      <img class="video-img" v-bind:src="item.imageUrl">
                      <div class="video-title">{{ item.title }}</div>
                 </div>
@@ -154,7 +154,6 @@ export default {
     },
     data () {
         return {
-                src : 'https://cv.phncdn.com/videos/201801/02/148248372/240P_400K_148248372.mp4?a5dcae8e1adc0bdaed975f0d60fb5e050d523df0cca6435032db1bab0a4b451d8a412585437d6eae1df116efbf02055b919ff38f1363fc67bfd8537f45abf2df6554cb0e19305fca8319e1b5b907993b06e07375e162df0455e164875471f170a9d6512f6279260d8f5f71d71530c6604e3a70c7e9e8a9d18a1f6c',
                 videos: [
                         			{
                         				"channelId": 1,
@@ -183,8 +182,6 @@ export default {
     mounted : function () {
         console.log('mounted---');
 
-        // https://github.com/fluid-player/fluid-player
-
         var testVideo = fluidPlayer(
             'my-video',
             '',
@@ -193,6 +190,8 @@ export default {
             }
         );
         console.log(testVideo);
+
+
 
 
         var header =  {'Accept': 'application/json'};
@@ -208,6 +207,11 @@ export default {
 
 
 
+    },
+    methods: {
+        gotoVideoPage: function (event) {
+            console.log(event);
+        }
     },
     components : { hello }
 }
