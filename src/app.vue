@@ -71,7 +71,7 @@
 
 
             <div class="video-container">
-                <div class="video-item" v-for="item in videos" link="/video/item.imageUrl/item.title">
+                <div class="video-item" v-for="item in videos" v-on:click="gotoVideoPage(item)">
                      <img class="video-img" v-bind:src="item.imageUrl">
                      <div class="video-title">{{ item.title }}</div>
                 </div>
@@ -210,8 +210,9 @@ export default {
 
     },
     methods: {
-        gotoVideoPage: function (event) {
-            console.log(event);
+        gotoVideoPage: function (item,event) {
+            console.log(item);
+            this.$router.push('video');
         }
     },
     components : { hello }
