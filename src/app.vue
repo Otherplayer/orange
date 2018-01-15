@@ -114,8 +114,9 @@
     </f7-views>
 
 
-    <!-- Popup -->
-    <f7-popup id="popup">
+
+    <!-- 视频播放页面 -->
+    <f7-popup id="popup-video">
       <f7-view navbar-fixed>
         <f7-pages>
           <f7-page>
@@ -124,20 +125,25 @@
                 <f7-link close-popup>Close</f7-link>
               </f7-nav-right>
             </f7-navbar>
-            <f7-block>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, architecto. Cupiditate laudantium rem nesciunt numquam, ipsam. Voluptates omnis, a inventore atque ratione aliquam. Omnis iusto nemo quos ullam obcaecati, quod.</f7-block>
+            <f7-block>
+
+              <video id='my-video' controls = 'controls' type='video/mp4' style="width: 100%; height: 400px;">
+                <source v-bind:src="src" />
+              </video>
+
+            </f7-block>
           </f7-page>
         </f7-pages>
       </f7-view>
     </f7-popup>
+
 
     <!-- Login Screen -->
     <f7-login-screen id="login-screen">
       <f7-view>
         <f7-pages>
 
-            <video id='my-video' controls = 'controls' type='video/mp4' style="width: 100%; height: 400px;">
-              <source v-bind:src="src" />
-            </video>
+
 
         </f7-pages>
       </f7-view>
@@ -151,53 +157,80 @@
 import hello from './components/hello.vue'
 
 export default {
-    created() {
-        console.log('created---');
-
-
-
-
-    },
     data () {
         return {
-                videos: [
-                        			{
-                        				"channelId": 1,
-                        				"id": 39,
-                        				"imageUrl": "http://d.hiphotos.baidu.com/image/h%3D300/sign=9af99ce45efbb2fb2b2b5e127f4b2043/a044ad345982b2b713b5ad7d3aadcbef76099b65.jpg",
-                        				"sortDate": 1515943735000,
-                        				"status": 1,
-                        				"title": "Hot Teen Stepsister Stuck In Sink And Fucked",
-                        				"typeId": 4,
-                        				"videoUrl": "http://www.xvideos.com/video32776479/best-2018-01/0/hot_teen_stepsister_stuck_in_sink_and_fucked"
-                        			},
-                        			{
-                        				"channelId": 1,
-                        				"id": 40,
-                        				"imageUrl": "http://d.hiphotos.baidu.com/image/h%3D300/sign=9af99ce45efbb2fb2b2b5e127f4b2043/a044ad345982b2b713b5ad7d3aadcbef76099b65.jpg",
-                        				"sortDate": 1515943735000,
-                        				"status": 1,
-                        				"title": "Stranger Jerked and suck me in the train",
-                        				"typeId": 4,
-                        				"videoUrl": "http://www.xvideos.com/video32893295/best-2018-01/0/stranger_jerked_and_suck_me_in_the_train"
-                        			},
+            infor:{},
+            videos: [
+                {
+                    "channelId": 1,
+                    "id": 39,
+                    "imageUrl": "http://d.hiphotos.baidu.com/image/h%3D300/sign=9af99ce45efbb2fb2b2b5e127f4b2043/a044ad345982b2b713b5ad7d3aadcbef76099b65.jpg",
+                    "sortDate": 1515943735000,
+                    "status": 1,
+                    "title": "Hot Teen Stepsister Stuck In Sink And Fucked",
+                    "typeId": 4,
+                    "videoUrl": "http://www.xvideos.com/video32776479/best-2018-01/0/hot_teen_stepsister_stuck_in_sink_and_fucked"
+                },
+                {
+                    "channelId": 1,
+                    "id": 40,
+                    "imageUrl": "http://d.hiphotos.baidu.com/image/h%3D300/sign=9af99ce45efbb2fb2b2b5e127f4b2043/a044ad345982b2b713b5ad7d3aadcbef76099b65.jpg",
+                    "sortDate": 1515943735000,
+                    "status": 1,
+                    "title": "Stranger Jerked and suck me in the train",
+                    "typeId": 4,
+                    "videoUrl": "http://www.xvideos.com/video32893295/best-2018-01/0/stranger_jerked_and_suck_me_in_the_train"
+                },
+            ]
+        }
+    },
+    created() {
+        console.log('created---');
+        var app = new Framework7();
+        app.showIndicator();
+        var header =  {'Accept': 'application/json'};
+        this.$http.post('http://52.14.107.3:80/video/content/list',{channelId:'1'},header).then(response => {
 
-                        		]
-            }
+            // get body data
+            var datas = response.body.result.list;
+            //this.videos = datas;
+            console.log(datas);
+
+            app.hideIndicator();
+
+        }, response => {
+            // error callback
+            console.log(response.body);
+
+            app.hideIndicator();
+        });
+
+
     },
     mounted : function () {
         console.log('mounted---');
+        var app = new Framework7();
+        var $$ = Dom7;
+        // DOM events for About popup
+        $$('.popup').on('popup:open', function (e, popup) {
+            console.log('About popup open');
+        });
+        $$('.popup').on('popup:opened', function (e, popup) {
+            console.log('About popup opened');
+        });
+        $$('.popup').on('popup:close', function (e, popup) {
+            console.log('About popup close');
+        });
+        $$('.popup').on('popup:closed', function (e, popup) {
+            console.log('About popup closed');
+        });
 
-
-            var app = new Framework7();
-            console.log(app);
-            var $$ = Dom7;
-            // Alert
-            $$('.open-alert').on('click', function () {
-              //app.alert('Hello');
-
-              app.popup('.popup');
-            });
+        // Alert
+//        $$('.open-alert').on('click', function () {
+//            //app.alert('Hello');
+//
+//
+//        });
 
 
         var testVideo = fluidPlayer(
@@ -210,53 +243,19 @@ export default {
 
 
 
-        var header =  {'Accept': 'application/json'};
-        this.$http.post('http://52.14.107.3:80/video/content/list',{channelId:'1'},header).then(response => {
-
-            // get body data
-            var datas = response.body.result.list;
-            //this.videos = datas;
-            console.log(datas);
-
-
-          }, response => {
-            // error callback
-            console.log(response.body);
-        });
 
 
 
-        var $$ = Dom7;
-        // DOM events for About popup
-        $$('.popup').on('popup:open', function (e, popup) {
-          console.log('About popup open');
-        });
-        $$('.popup').on('popup:opened', function (e, popup) {
-          console.log('About popup opened');
-        });
-        $$('.popup').on('popup:close', function (e, popup) {
-          console.log('About popup close');
-        });
-        $$('.popup').on('popup:closed', function (e, popup) {
-          console.log('About popup closed');
-        });
+
+
 
     },
     methods: {
         gotoVideoPage: function (item,event) {
             console.log(item);
-
-
-
-
-
-
-
-
-
-
-
-            //this.$router.load({pageName: 'main'})
+            this.infor = item;
+            var app = new Framework7();
+            app.popup('.popup-video');
         }
     },
     components : { hello }
