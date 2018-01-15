@@ -34,9 +34,6 @@ Vue.http.interceptors.push((request, next) => {
     // 请求发送前的处理逻辑
     // ...
     next((response) => {
-
-        console.log('-----------',response);
-
         // ...
         // 请求发送后的处理逻辑
         // ...

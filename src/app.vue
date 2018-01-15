@@ -5,13 +5,13 @@
     <!-- Statusbar -->
     <f7-statusbar></f7-statusbar>
 
+
     <!-- Left Panel -->
     <f7-panel left cover layout="dark">
       <f7-view id="left-panel-view" navbar-through :dynamic-navbar="true">
-        <f7-navbar v-if="$theme.ios" title="Left Panel" sliding></f7-navbar>
+        <f7-navbar title="Left Panel" sliding></f7-navbar>
         <f7-pages>
           <f7-page>
-            <f7-navbar v-if="$theme.material" title="Left Panel" sliding></f7-navbar>
             <f7-block inner>
 
                 <div>Log in</div>
@@ -21,7 +21,7 @@
             </f7-block>
             <f7-block-title class="orange">MAIN</f7-block-title>
             <f7-list>
-              <f7-list-item link="/about/" title="Porn Videos"></f7-list-item>
+              <f7-list-item link="/about/" title="Porn Videos" media="<i class='icon icon-f7'></i>" after="CEO"></f7-list-item>
               <f7-list-item link="/form/" title="Playlists"></f7-list-item>
               <f7-list-item link="/form/" title="Categories"></f7-list-item>
               <f7-list-item link="/form/" title="Channels"></f7-list-item>
@@ -71,7 +71,7 @@
 
 
             <div class="video-container">
-                <div class="video-item" v-for="item in videos" v-on:click="gotoVideoPage(item)">
+                <div class="video-item" v-for="(item, index) in videos" v-on:click="gotoVideoPage(item)">
                      <img class="video-img" v-bind:src="item.imageUrl">
                      <div class="video-title">{{ item.title }}</div>
                 </div>
@@ -99,12 +99,8 @@
             <f7-block-title>Modals</f7-block-title>
             <f7-block>
               <f7-grid>
-              <button class="col button open-alert">Alert</button>
                 <f7-col width="50">
                   <f7-button open-popup="#popup">Popup</f7-button>
-                </f7-col>
-                <f7-col width="50">
-                  <f7-button open-login-screen="#login-screen">Login Screen</f7-button>
                 </f7-col>
               </f7-grid>
             </f7-block>
@@ -116,7 +112,7 @@
 
 
     <!-- 视频播放页面 -->
-    <f7-popup id="popup-video">
+    <f7-popup id="popup" class="video-page">
       <f7-view navbar-fixed>
         <f7-pages>
           <f7-page>
@@ -128,7 +124,7 @@
             <f7-block>
 
               <video id='my-video' controls = 'controls' type='video/mp4' style="width: 100%; height: 400px;">
-                <source v-bind:src="src" />
+                <source v-bind:src="infor.videoUrl" />
               </video>
 
             </f7-block>
@@ -136,18 +132,6 @@
         </f7-pages>
       </f7-view>
     </f7-popup>
-
-
-    <!-- Login Screen -->
-    <f7-login-screen id="login-screen">
-      <f7-view>
-        <f7-pages>
-
-
-
-        </f7-pages>
-      </f7-view>
-    </f7-login-screen>
 
   </div>
 </template>
@@ -159,7 +143,7 @@ import hello from './components/hello.vue'
 export default {
     data () {
         return {
-            infor:{},
+            infor:{videoUrl:''},
             videos: [
                 {
                     "channelId": 1,
@@ -209,29 +193,19 @@ export default {
     },
     mounted : function () {
         console.log('mounted---');
-        var app = new Framework7();
-        var $$ = Dom7;
         // DOM events for About popup
-        $$('.popup').on('popup:open', function (e, popup) {
+        this.$$('.video-page').on('popup:open', function (e, popup) {
             console.log('About popup open');
         });
-        $$('.popup').on('popup:opened', function (e, popup) {
+        this.$$('.video-page').on('popup:opened', function (e, popup) {
             console.log('About popup opened');
         });
-        $$('.popup').on('popup:close', function (e, popup) {
+        this.$$('.video-page').on('popup:close', function (e, popup) {
             console.log('About popup close');
         });
-        $$('.popup').on('popup:closed', function (e, popup) {
+        this.$$('.video-page').on('popup:closed', function (e, popup) {
             console.log('About popup closed');
         });
-
-        // Alert
-//        $$('.open-alert').on('click', function () {
-//            //app.alert('Hello');
-//
-//
-//        });
-
 
         var testVideo = fluidPlayer(
             'my-video',
@@ -242,20 +216,11 @@ export default {
         );
 
 
-
-
-
-
-
-
-
     },
     methods: {
         gotoVideoPage: function (item,event) {
-            console.log(item);
             this.infor = item;
-            var app = new Framework7();
-            app.popup('.popup-video');
+            this.$f7.popup('.video-page');
         }
     },
     components : { hello }
