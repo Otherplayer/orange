@@ -90,7 +90,7 @@
           <f7-nav-left>
             <f7-link icon="icon" open-panel="left"><i class="f7-icons">bars</i></f7-link>
           </f7-nav-left>
-          <f7-nav-center sliding>ORANGE</f7-nav-center>
+          <f7-nav-center sliding><span class="nav-title-pre">ORA</span><span class="nav-title-after">NGE</span></f7-nav-center>
         </f7-navbar>
 
 
