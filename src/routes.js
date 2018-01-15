@@ -4,6 +4,10 @@ export default [
       component: require('./pages/about.vue')
   },
     {
+        path: '/login/',
+        component: require('./pages/login.vue')
+    },
+    {
         path: '/video/:url/',
         component: require('./pages/video.vue')
     },
