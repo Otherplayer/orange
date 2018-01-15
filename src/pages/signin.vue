@@ -62,7 +62,14 @@
                         var token = data.token;
                         var username = data.username;
 
-                        
+                        // Vue.http.headers.common['token'] = 'YXBpOnBhc3N3b3Jk';
+
+
+                        this.$cookie.set('ph-user-token', token, 7);
+                        this.$cookie.set('ph-user-name', username, 7);
+
+                        // To delete a cookie use
+                        // this.$cookie.delete('ph-user-name');
 
                         f7.views.main.router.back();
                     }else {
@@ -90,3 +97,13 @@
 <style scoped>
 
 </style>
+
+
+
+<!--this.$cookie.set('integer', 'Seven days later', { expires: 7 });-->
+<!--this.$cookie.set('stringSuffixY', 'One year later', { expires: '1Y' });-->
+<!--this.$cookie.set('stringSuffixM', 'One month later', { expires: '1M' });-->
+<!--this.$cookie.set('stringSuffixD', 'One day later', { expires: '1D' });-->
+<!--this.$cookie.set('stringSuffixh', 'One hour later', { expires: '1h' });-->
+<!--this.$cookie.set('stringSuffixm', 'Ten minutes later', { expires: '10m' });-->
+<!--this.$cookie.set('stringSuffixs', 'Thirty seconds later', { expires: '30s' });-->

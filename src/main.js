@@ -25,7 +25,11 @@ import Routes from './routes.js'
 import VueResource from 'vue-resource'
 Vue.use(VueResource);
 
-// Vue.http.headers.common['token'] = 'YXBpOnBhc3N3b3Jk';
+// Require dependencies
+var VueCookie = require('vue-cookie');
+// Tell Vue to use the plugin
+Vue.use(VueCookie);
+
 
 Vue.http.interceptors.push((request, next) => {
 

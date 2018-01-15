@@ -226,7 +226,6 @@ export default {
     },
     methods: {
         loginAction: function () {
-
             this.$f7.closePanel('left');
             this.$f7.views.main.router.load({url: '/signin/'});
             //this.$f7.mainView.router
