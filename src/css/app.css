@@ -20,6 +20,15 @@ ul {  list-style: none;  }
     height: auto !important;
 }
 
+.login-container {
+    text-align: center;
+    color: orange;
+}
+.login-container img {
+    width: 40px;
+    height: 40px;
+}
+
 .video-container {
     width: 100%;
 }
@@ -34,3 +43,4 @@ ul {  list-style: none;  }
     padding: 5px 10px;
     min-height: 40px;
 }
+

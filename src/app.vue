@@ -14,9 +14,17 @@
           <f7-page>
             <f7-block inner>
 
-                <div @click="loginAction">Log in</div>
-                <div>Sign up</div>
-                <div>Upload</div>
+              <div class="row login-container">
+                <!-- Each "cell" has col-[widht in percents] class -->
+                <div class="col-50" @click="loginAction">
+                  <img class="icon" src="./assets/1.jpg" />
+                  <div class="title">Log in</div>
+                </div>
+                <div class="col-50" @click="signUpAction">
+                  <img class="icon" src="./assets/1.jpg" />
+                  <div class="title">Sign up</div>
+                </div>
+              </div>
 
             </f7-block>
             <f7-block-title class="orange">MAIN</f7-block-title>
@@ -166,7 +174,6 @@ export default {
         }
     },
     created() {
-        console.log('created---');
         var app = new Framework7();
         app.showIndicator();
         var header =  {'Accept': 'application/json'};
@@ -190,6 +197,9 @@ export default {
     },
     mounted : function () {
         console.log('mounted---');
+        // Change Theme Color
+        this.changeLayout('layout-dark');
+        this.changeColor('theme-orange');
         // DOM events for About popup
         this.$$('.video-page').on('popup:open', function (e, popup) {
             console.log('About popup open');
@@ -212,14 +222,16 @@ export default {
             }
         );
 
-        this.changeLayout('layout-dark');
-        this.changeColor('theme-orange');
     },
     methods: {
         loginAction: function () {
             this.$f7.closePanel('left');
             this.$f7.views.main.router.load({url: '/signin/'});
             //this.$f7.mainView.router
+        },
+        signUpAction: function () {
+            this.$f7.closePanel('left');
+            this.$f7.views.main.router.load({url: '/signup/'});
         },
         gotoVideoPage: function (item,event) {
             this.infor = item;
