@@ -15,7 +15,10 @@ ul {  list-style: none;  }
 .layout-dark .content-block-title {
     color: orange;
 }
-
+.fluid_video_wrapper.mobile {
+    width: 100% !important;
+    height: auto !important;
+}
 
 .video-container {
     width: 100%;

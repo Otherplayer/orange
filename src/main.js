@@ -57,6 +57,10 @@ new Vue({
   // Init Framework7 by passing parameters here
   framework7: {
     root: '#app',
+    // App Name
+    name: 'Orange',
+    // App id
+    id: 'com.myapp.orange',
     /* Uncomment to enable Material theme: */
     // material: true,
     routes: Routes,
