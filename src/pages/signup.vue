@@ -32,7 +32,7 @@
             </f7-list-item>
         </f7-list>
         <f7-list>
-            <f7-list-button title="Sign Up" @click="signUpAction"></f7-list-button>
+            <f7-list-button title="Sign Up" class="text-color-red" @click="signUpAction"></f7-list-button>
             <f7-list-label>
                 <div>Some text about login information.</div>
                 <div>Some text about login information.</div>

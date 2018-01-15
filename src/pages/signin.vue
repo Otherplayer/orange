@@ -14,11 +14,11 @@
         </f7-list>
         <f7-list>
             <f7-list-button title="Sign In" @click="signInAction"></f7-list-button>
-            <f7-list-item link="/signup/" title="Sign up"></f7-list-item>
+            <f7-list-item link="/signup/" class="orange" title="Sign up"></f7-list-item>
             <!--<f7-list-button title="Sign Up" @click="signUpAction"></f7-list-button>-->
             <f7-list-label>
-                <div>Some text about login information.</div>
-                <div>Some text about login information.</div>
+                <div>FBI Warning.</div>
+                <div>FBI Warning.</div>
             </f7-list-label>
         </f7-list>
     </f7-page>

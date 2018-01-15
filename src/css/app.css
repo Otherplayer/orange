@@ -8,10 +8,10 @@ ul {  list-style: none;  }
     padding: 0;
 }
 
-.orange {
+
+.list-block .list-button {
     color: orange;
 }
-
 .layout-dark .content-block-title {
     color: orange;
 }

@@ -1,6 +1,6 @@
 <template>
   <!-- App -->
-  <div id="app">
+  <div id="app" class="color-theme-orange">
 
     <!-- Statusbar -->
     <f7-statusbar></f7-statusbar>
@@ -138,6 +138,8 @@ import hello from './components/hello.vue'
 export default {
     data () {
         return {
+            themes: 'theme-white theme-black theme-yellow theme-red theme-blue theme-green theme-pink theme-lightblue theme-orange theme-gray',
+            layouts: 'layout-dark layout-white',
             infor:{videoUrl:''},
             videos: [
                 {
@@ -210,7 +212,8 @@ export default {
             }
         );
 
-
+        this.changeLayout('layout-dark');
+        this.changeColor('theme-orange');
     },
     methods: {
         loginAction: function () {
@@ -221,6 +224,12 @@ export default {
         gotoVideoPage: function (item,event) {
             this.infor = item;
             this.$f7.popup('.video-page');
+        },
+        changeLayout: function (layout) {
+            this.$$('body').removeClass(this.layouts).addClass(layout)
+        },
+        changeColor: function (color) {
+            this.$$('body').removeClass(this.themes).addClass(color)
         }
     },
     components : { hello }
