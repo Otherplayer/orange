@@ -98,16 +98,15 @@
                         f7.alert('sign up success','Congratulation',function () {
                             f7.views.main.router.back();
                         });
-
                     }else {
-                        f7.alert(data.retInfo,'tip');
+                        f7.alert(data.retInfo,'error');
                     }
 
 
                 }, response => {
                     // error callback
                     var data = response.body;
-                    f7.alert(data.retInfo,'tip');
+                    f7.alert(data.retInfo,'error');
                     f7.hideIndicator();
                 });
 

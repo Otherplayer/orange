@@ -175,6 +175,7 @@ export default {
     },
     created() {
         var app = new Framework7();
+
         app.showIndicator();
         var header =  {'Accept': 'application/json'};
         this.$http.post('http://52.14.107.3:80/video/content/list',{channelId:'1'},header).then(response => {
@@ -225,6 +226,7 @@ export default {
     },
     methods: {
         loginAction: function () {
+
             this.$f7.closePanel('left');
             this.$f7.views.main.router.load({url: '/signin/'});
             //this.$f7.mainView.router
