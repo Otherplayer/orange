@@ -47,6 +47,7 @@
             <f7-block-title>COMMUNITY</f7-block-title>
             <f7-list>
               <f7-list-item link="/about/" title="Feed" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item title="Log out" @click="logoutAction"></f7-list-item>
             </f7-list>
           </f7-page>
         </f7-pages>
@@ -197,7 +198,6 @@ export default {
         this.user.token = this.$cookie.get('ph-user-token');
         this.user.name = this.$cookie.get('ph-user-name');
 
-        console.log(this.user);
 
         var app = new Framework7();
         app.showIndicator();
@@ -259,6 +259,12 @@ export default {
         signUpAction: function () {
             this.$f7.closePanel('left');
             this.$f7.views.main.router.load({url: '/signup/'});
+        },
+        logoutAction: function () {
+            this.$cookie.delete('ph-user-token');
+            this.$cookie.delete('ph-user-name');
+            this.token = null;
+            this.name = null;
         },
         gotoVideoPage: function (item,event) {
             this.infor = item;
