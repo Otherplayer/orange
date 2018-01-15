@@ -86,7 +86,7 @@
         <!-- iOS Theme Navbar -->
         <f7-navbar>
           <f7-nav-left>
-            <f7-link icon="icon-bars" open-panel="left"></f7-link>
+            <f7-link icon="icon" open-panel="left"><i class="f7-icons">bars</i></f7-link>
           </f7-nav-left>
           <f7-nav-center sliding>ORANGE</f7-nav-center>
         </f7-navbar>
@@ -110,31 +110,32 @@
                 </div>
             </div>
 
-            <f7-block-title>Navigation</f7-block-title>
-            <f7-list>
-              <f7-list-item link="/video/abc" title="Video"></f7-list-item>
-              <f7-list-item link="/form/" title="Form"></f7-list-item>
-              <f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>
-            </f7-list>
-            <f7-block-title>Side Panels</f7-block-title>
-            <f7-block>
-              <f7-grid>
-                <f7-col width="50">
-                  <f7-button open-panel="left">Left Panel</f7-button>
-                </f7-col>
-                <f7-col width="50">
-                  <f7-button open-panel="right">Right Panel</f7-button>
-                </f7-col>
-              </f7-grid>
-            </f7-block>
-            <f7-block-title>Modals</f7-block-title>
-            <f7-block>
-              <f7-grid>
-                <f7-col width="50">
-                  <f7-button open-popup="#popup">Popup</f7-button>
-                </f7-col>
-              </f7-grid>
-            </f7-block>
+            <!--<f7-block-title>Navigation</f7-block-title>-->
+            <!--<f7-list>-->
+              <!--<f7-list-item link="/video/abc" title="Video"></f7-list-item>-->
+              <!--<f7-list-item link="/form/" title="Form"></f7-list-item>-->
+              <!--<f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>-->
+            <!--</f7-list>-->
+            <!--<f7-block-title>Side Panels</f7-block-title>-->
+            <!--<f7-block>-->
+              <!--<f7-grid>-->
+                <!--<f7-col width="50">-->
+                  <!--<f7-button open-panel="left">Left Panel</f7-button>-->
+                <!--</f7-col>-->
+                <!--<f7-col width="50">-->
+                  <!--<f7-button open-panel="right">Right Panel</f7-button>-->
+                <!--</f7-col>-->
+              <!--</f7-grid>-->
+            <!--</f7-block>-->
+            <!--<f7-block-title>Modals</f7-block-title>-->
+            <!--<f7-block>-->
+              <!--<f7-grid>-->
+                <!--<f7-col width="50">-->
+                  <!--<f7-button open-popup="#popup">Popup</f7-button>-->
+                <!--</f7-col>-->
+              <!--</f7-grid>-->
+            <!--</f7-block>-->
+
 
           </f7-page>
         </f7-pages>
@@ -162,8 +163,6 @@
         </f7-pages>
       </f7-view>
     </f7-popup>
-
-
 
 
 
@@ -314,8 +313,6 @@ export default {
             if (index >= 0) {
                 this.categories[index].isopen = !this.categories[index].isopen;
             }
-            console.log(category);
-
         }
     },
     components : { hello }
