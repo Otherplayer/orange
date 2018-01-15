@@ -27,7 +27,7 @@
               </div>
 
             </f7-block>
-            <f7-block-title class="orange">MAIN</f7-block-title>
+            <f7-block-title>MAIN</f7-block-title>
             <f7-list>
               <f7-list-item link="/about/" title="Porn Videos" media="<i class='icon icon-f7'></i>" after="CEO"></f7-list-item>
               <f7-list-item link="/form/" title="Playlists"></f7-list-item>

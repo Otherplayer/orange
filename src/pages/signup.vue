@@ -5,27 +5,31 @@
         <f7-list form>
             <f7-list-item>
                 <f7-label>Nickname</f7-label>
-                <f7-input type="text" placeholder="Nickname" v-model="nickname"></f7-input>
+                <f7-input type="text" placeholder="Nickname" v-model="info.nickname"></f7-input>
+            </f7-list-item>
+            <f7-list-item>
+                <f7-label>Username</f7-label>
+                <f7-input type="text" placeholder="Username" v-model="info.username"></f7-input>
             </f7-list-item>
             <f7-list-item>
                 <f7-label>Password</f7-label>
-                <f7-input type="password" placeholder="Password" v-model="password"></f7-input>
+                <f7-input type="password" placeholder="Password" v-model="info.password"></f7-input>
             </f7-list-item>
             <f7-list-item>
                 <f7-label>E-mail</f7-label>
-                <f7-input type="email" placeholder="E-mail" v-model="email"></f7-input>
+                <f7-input type="email" placeholder="E-mail" v-model="info.email"></f7-input>
             </f7-list-item>
             <f7-list-item>
                 <f7-label>Phone</f7-label>
-                <f7-input type="tel" placeholder="Phone" v-model="phone"></f7-input>
+                <f7-input type="tel" placeholder="Phone" v-model="info.phone"></f7-input>
             </f7-list-item>
             <f7-list-item>
                 <f7-label>Birth time</f7-label>
-                <f7-input type="datetime-local" v-model="age"></f7-input>
+                <f7-input type="datetime-local" v-model="info.age"></f7-input>
             </f7-list-item>
             <f7-list-item>
                 <f7-label>Gender</f7-label>
-                <f7-input type="select" v-model="gender">
+                <f7-input type="select" v-model="info.gender">
                     <option value="1">Male</option>
                     <option value="1">Female</option>
                 </f7-input>
@@ -46,13 +50,16 @@
     export default {
         data () {
             return {
-                nickname: '',
-                email: '',
-                password: '',
-                phone: '',
-                age:'',
-                gender:'1',
-                headUrl:'-'
+                info:{
+                    nickname: '',
+                    username: '',
+                    email: '',
+                    password: '',
+                    phone: '',
+                    age:'20',
+                    gender:'1',
+                    headUrl:'-'
+                }
             }
         },
         methods: {
@@ -60,18 +67,26 @@
 
 
                 let f7 = this.$f7;
-                if (this.email.length === 0) {
-                    f7.alert('Please input email first.','tip');
+                if (this.info.nickname.length === 0) {
+                    f7.alert('Please input nickname first.','tip');
                     return;
                 }
-                if (this.password.length === 0) {
+                if (this.info.password.length === 0) {
                     f7.alert('Please input password.','tip');
                     return;
                 }
+                if (this.info.email.length === 0) {
+                    f7.alert('Please input email.','tip');
+                    return;
+                }
+                if (this.info.phone.length === 0) {
+                    f7.alert('Please input phone.','tip');
+                    return;
+                }
 
-                this.$f7.showIndicator();
+                f7.showIndicator();
                 var header =  {'Accept': 'application/json'};
-                this.$http.post('http://52.14.107.3:80/video/member/login',{password:this.password,email:this.email},header).then(response => {
+                this.$http.post('http://52.14.107.3:80/video/member/register',this.info,header).then(response => {
 
                     // get body data
                     var data = response.body;
