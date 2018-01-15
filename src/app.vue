@@ -38,12 +38,34 @@
             <div class="content-block-title">MAIN</div>
             <div class="list-block media-list">
               <ul>
-                <li v-for="category in categories">
+                <li v-for="(category, index) in categories" @click="didClickCategory(category,index)">
                   <div class="item-content">
                     <div class="item-media"><img v-bind:src="category.icon" width="22"></div>
-                    <div class="item-inner item-link" @click="loginAction">
+                    <div class="item-inner item-link">
                       <div class="item-title-row">
                         <div class="item-subtitle">{{category.title}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--//sub-->
+                  <ul v-show="category.sub.length > 0 && category.isopen">
+                    <li v-for="subCategory in category.sub" @click="didClickCategory(subCategory,-1)">
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-subtitle">{{subCategory.title}}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="item-content">
+                    <div class="item-media"><img src="./assets/1.jpg" width="22"></div>
+                    <div class="item-inner item-link" @click="logoutAction">
+                      <div class="item-title-row">
+                        <div class="item-subtitle">Log out</div>
                       </div>
                     </div>
                   </div>
@@ -51,25 +73,6 @@
               </ul>
             </div>
 
-
-            <f7-list>
-              <f7-list-item link="/about/" title="Porn Videos" media="<i class='icon icon-f7'></i>" after="CEO"></f7-list-item>
-              <f7-list-item link="/form/" title="Playlists">
-
-              </f7-list-item>
-              <f7-list-item link="/form/" title="Categories">
-                <img src="assets/1.jpg" width="20" height="20" class="media" />
-              </f7-list-item>
-              <f7-list-item link="/form/" title="Channels"></f7-list-item>
-              <f7-list-item link="/form/" title="Photos"></f7-list-item>
-              <f7-list-item link="/form/" title="Pornstars"></f7-list-item>
-              <f7-list-item link="/form/" title="Pornhub Select"></f7-list-item>
-            </f7-list>
-            <f7-block-title>COMMUNITY</f7-block-title>
-            <f7-list>
-              <f7-list-item link="/about/" title="Feed" link-view="#main-view" link-close-panel></f7-list-item>
-              <f7-list-item title="Log out" @click="logoutAction"></f7-list-item>
-            </f7-list>
           </f7-page>
         </f7-pages>
       </f7-view>
@@ -107,8 +110,6 @@
                 </div>
             </div>
 
-
-
             <f7-block-title>Navigation</f7-block-title>
             <f7-list>
               <f7-list-item link="/video/abc" title="Video"></f7-list-item>
@@ -134,9 +135,6 @@
                 </f7-col>
               </f7-grid>
             </f7-block>
-
-
-
 
           </f7-page>
         </f7-pages>
@@ -183,9 +181,9 @@ export default {
             themes: 'theme-white theme-black theme-yellow theme-red theme-blue theme-green theme-pink theme-lightblue theme-orange theme-gray',
             layouts: 'layout-dark layout-white',
             categories:[
-                {title:'Porn Videos',icon:'static/img/1.1550254.jpg',sub:[{title:'1'},{title:'2'},{title:'3'}]},
+                {title:'Porn Videos',icon:'static/img/1.1550254.jpg',isopen:false,sub:[{title:'1'},{title:'2'},{title:'3'}]},
                 {title:'Playlists',icon:'static/img/1.1550254.jpg',sub:[]},
-                {title:'Categories',icon:'static/img/1.1550254.jpg',sub:[{title:'1'},{title:'2'},{title:'3'}]},
+                {title:'Categories',icon:'static/img/1.1550254.jpg',isopen:false,sub:[{title:'1'},{title:'2'},{title:'3'}]},
                 {title:'Channels',icon:'static/img/1.1550254.jpg',sub:[]},
                 {title:'Pornstars',icon:'static/img/1.1550254.jpg',sub:[]},
                 {title:'Pornhub Select',icon:'static/img/1.1550254.jpg',sub:[]},
@@ -290,10 +288,17 @@ export default {
             this.$f7.views.main.router.load({url: '/signup/'});
         },
         logoutAction: function () {
-            this.$cookie.delete('ph-user-token');
-            this.$cookie.delete('ph-user-name');
-            this.token = null;
-            this.name = null;
+
+            let self = this;
+            let f7 = this.$f7;
+            f7.confirm('Do you want to sign out ?','warning', function () {
+                f7.closePanel('left');
+                self.$cookie.delete('ph-user-token');
+                self.$cookie.delete('ph-user-name');
+                self.user.token = null;
+                self.user.name = null;
+            })
+
         },
         gotoVideoPage: function (item,event) {
             this.infor = item;
@@ -304,6 +309,13 @@ export default {
         },
         changeColor: function (color) {
             this.$$('body').removeClass(this.themes).addClass(color)
+        },
+        didClickCategory: function (category, index) {
+            if (index >= 0) {
+                this.categories[index].isopen = !this.categories[index].isopen;
+            }
+            console.log(category);
+
         }
     },
     components : { hello }

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cf26abc-ad7a-4939-b6df-b6910473efe4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.vue" afterPath="$PROJECT_DIR$/src/app.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,8 +27,8 @@
       <file leaf-file-name="signin.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/signin.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
-              <caret line="74" column="27" lean-forward="false" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="63" />
+            <state relative-caret-position="483">
+              <caret line="64" column="51" lean-forward="false" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -63,21 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="framework7.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/framework7/dist/js/framework7.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="1694" column="4" lean-forward="false" selection-start-line="1694" selection-start-column="4" selection-end-line="1694" selection-end-column="4" />
+            <state relative-caret-position="179">
+              <caret line="6767" column="8" lean-forward="false" selection-start-line="6767" selection-start-column="8" selection-end-line="6767" selection-end-column="8" />
               <folding>
                 <marker date="1504781590000" expanded="true" signature="311967:311999" ph="..." />
                 <marker date="1504781590000" expanded="true" signature="435999:436151" ph="..." />
@@ -119,12 +110,22 @@
       <file leaf-file-name="app.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="185" column="43" lean-forward="false" selection-start-line="185" selection-start-column="43" selection-end-line="185" selection-end-column="43" />
+            <state relative-caret-position="321">
+              <caret line="315" column="13" lean-forward="true" selection-start-line="315" selection-start-column="13" selection-end-line="315" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#video#0;n#f7-page#0;n#f7-pages#0;n#f7-view#0;n#f7-popup#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="e#6090#6132#0" expanded="true" />
+                <element signature="e#6116#6158#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="framework7.ios.rtl.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/framework7/src/less/ios/framework7.ios.rtl.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-296">
+              <caret line="47" column="9" lean-forward="false" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -162,6 +163,7 @@
       <find>doAlert</find>
       <find>close</find>
       <find>loginAction</find>
+      <find>didClickCategory</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -463,12 +465,12 @@
       <workItem from="1515770393714" duration="1376000" />
       <workItem from="1515927434270" duration="13965000" />
       <workItem from="1515978965792" duration="6000" />
-      <workItem from="1515978991115" duration="20362000" />
+      <workItem from="1515978991115" duration="22473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40054000" />
+    <option name="totallyTimeSpent" value="42165000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -505,13 +507,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/prod.env.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/dynamic-route.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -597,7 +592,7 @@
           <caret line="159" column="20" lean-forward="true" selection-start-line="159" selection-start-column="20" selection-end-line="159" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#video#0;n#f7-page#0;n#f7-pages#0;n#f7-view#0;n#f7-popup#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#6090#6132#0" expanded="true" />
+            <element signature="e#6116#6158#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -793,17 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/framework7/dist/js/framework7.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="1694" column="4" lean-forward="false" selection-start-line="1694" selection-start-column="4" selection-end-line="1694" selection-end-column="4" />
-          <folding>
-            <marker date="1504781590000" expanded="true" signature="311967:311999" ph="..." />
-            <marker date="1504781590000" expanded="true" signature="435999:436151" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -862,19 +846,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/signin.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="74" column="27" lean-forward="false" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="63" />
+        <state relative-caret-position="483">
+          <caret line="64" column="51" lean-forward="false" selection-start-line="64" selection-start-column="51" selection-end-line="64" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/framework7/dist/js/framework7.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="6767" column="8" lean-forward="false" selection-start-line="6767" selection-start-column="8" selection-end-line="6767" selection-end-column="8" />
+          <folding>
+            <marker date="1504781590000" expanded="true" signature="311967:311999" ph="..." />
+            <marker date="1504781590000" expanded="true" signature="435999:436151" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/framework7/src/less/ios/framework7.ios.rtl.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-296">
+          <caret line="47" column="9" lean-forward="false" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="185" column="43" lean-forward="false" selection-start-line="185" selection-start-column="43" selection-end-line="185" selection-end-column="43" />
+        <state relative-caret-position="321">
+          <caret line="315" column="13" lean-forward="true" selection-start-line="315" selection-start-column="13" selection-end-line="315" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#video#0;n#f7-page#0;n#f7-pages#0;n#f7-view#0;n#f7-popup#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#6090#6132#0" expanded="true" />
+            <element signature="e#6116#6158#0" expanded="true" />
           </folding>
         </state>
       </provider>
