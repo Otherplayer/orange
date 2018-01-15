@@ -21,18 +21,18 @@ ul {  list-style: none;  }
 }
 
 .nav-title-pre {
-    height: 22px;
-    line-height: 22px;
-    font-size: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 18px;
     font-weight: bold;
     padding: 2px;
     color: white;
 }
 .nav-title-after {
-    height: 22px;
-    line-height: 22px;
+    height: 20px;
+    line-height: 20px;
     border-radius: 4px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: black;
     background-color: orange;
