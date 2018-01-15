@@ -69,6 +69,15 @@ new Vue({
     // material: true,
     routes: Routes,
   },
+    // App root data
+    data: {
+        // ....
+        token:'--------token'
+    },
+    // App root methods
+    methods: {
+        // ....
+    },
   // Register App Component
   components: {
     app: App,

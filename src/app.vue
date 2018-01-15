@@ -18,7 +18,7 @@
                 <!-- Each "cell" has col-[widht in percents] class -->
                 <div class="col-50" @click="loginAction">
                   <img class="icon" src="./assets/1.jpg" />
-                  <div class="title">Log in</div>
+                  <div class="title">{{(user.name && user.name != 'undefined' && user.name.length > 0) ? user.name : 'Log in'}}</div>
                 </div>
                 <div class="col-50" @click="signUpAction">
                   <img class="icon" src="./assets/1.jpg" />
@@ -105,6 +105,10 @@
                 </f7-col>
               </f7-grid>
             </f7-block>
+
+
+
+
           </f7-page>
         </f7-pages>
       </f7-view>
@@ -142,12 +146,14 @@
 <script>
 
 import hello from './components/hello.vue'
+import { bus } from './bus.js'
 
 export default {
     data () {
         return {
             themes: 'theme-white theme-black theme-yellow theme-red theme-blue theme-green theme-pink theme-lightblue theme-orange theme-gray',
             layouts: 'layout-dark layout-white',
+            user:{token:'',name:''},
             infor:{videoUrl:''},
             videos: [
                 {
@@ -174,8 +180,19 @@ export default {
         }
     },
     created() {
-        var app = new Framework7();
 
+        //登录成功后刷新界面
+        bus.$on('should-update-user-information', (user) => {
+            console.log(user);
+            this.user = user;
+        })
+
+        this.user.token = this.$cookie.get('ph-user-token');
+        this.user.name = this.$cookie.get('ph-user-name');
+
+        console.log(this.user);
+
+        var app = new Framework7();
         app.showIndicator();
         var header =  {'Accept': 'application/json'};
         this.$http.post('http://52.14.107.3:80/video/content/list',{channelId:'1'},header).then(response => {
@@ -193,7 +210,6 @@ export default {
 
             app.hideIndicator();
         });
-
 
     },
     mounted : function () {
@@ -223,12 +239,15 @@ export default {
             }
         );
 
+
+
     },
     methods: {
         loginAction: function () {
             this.$f7.closePanel('left');
             this.$f7.views.main.router.load({url: '/signin/'});
             //this.$f7.mainView.router
+            console.log(this.token);
         },
         signUpAction: function () {
             this.$f7.closePanel('left');

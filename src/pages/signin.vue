@@ -26,6 +26,8 @@
 
 <script>
 
+    import { bus } from './../bus.js'
+
     export default {
         data () {
             return {
@@ -59,11 +61,12 @@
                     f7.hideIndicator();
                     if (data.retCode === '0000000') {
 
-                        var token = data.token;
-                        var username = data.username;
+                        var token = data.result.token;
+                        var username = data.result.username;
 
                         // Vue.http.headers.common['token'] = 'YXBpOnBhc3N3b3Jk';
 
+                        bus.$emit('should-update-user-information', {token:token,name:username});
 
                         this.$cookie.set('ph-user-token', token, 7);
                         this.$cookie.set('ph-user-name', username, 7);
