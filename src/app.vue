@@ -14,7 +14,7 @@
           <f7-page>
             <f7-block inner>
 
-              <div class="row login-container">
+              <div class="row login-container" v-show="!user.token">
                 <!-- Each "cell" has col-[widht in percents] class -->
                 <div class="col-50" @click="loginAction">
                   <img class="icon" src="./assets/1.jpg" />
@@ -23,6 +23,13 @@
                 <div class="col-50" @click="signUpAction">
                   <img class="icon" src="./assets/1.jpg" />
                   <div class="title">Sign up</div>
+                </div>
+              </div>
+              <div class="row login-container" v-show="user.token">
+                <!-- Each "cell" has col-[widht in percents] class -->
+                <div class="col-100">
+                  <img class="icon" src="./assets/1.jpg" />
+                  <div class="title">{{user.name}}</div>
                 </div>
               </div>
 
