@@ -41,9 +41,10 @@
                 <li v-for="(category, index) in categories" @click="didClickCategory(category,index)">
                   <div class="item-content">
                     <div class="item-media"><img v-bind:src="category.icon" width="22"></div>
-                    <div class="item-inner item-link">
+                    <div class="item-inner">
                       <div class="item-title-row">
                         <div class="item-subtitle">{{category.title}}</div>
+                        <i v-show="category.sub.length > 0" class="f7-icons" style="font-size: 16px;padding-top: 5px;">down</i>
                       </div>
                     </div>
                   </div>
@@ -63,7 +64,7 @@
                 <li>
                   <div class="item-content">
                     <div class="item-media"><img src="./assets/1.jpg" width="22"></div>
-                    <div class="item-inner item-link" @click="logoutAction">
+                    <div class="item-inner" @click="logoutAction">
                       <div class="item-title-row">
                         <div class="item-subtitle">Log out</div>
                       </div>
