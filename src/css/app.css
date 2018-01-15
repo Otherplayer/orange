@@ -54,11 +54,17 @@ ul {  list-style: none;  }
 
 .login-container {
     text-align: center;
-    color: orange;
+    color: lightgray;
 }
 .login-container img {
     width: 40px;
     height: 40px;
+}
+.login-container i {
+    color: lightgray;
+}
+.login-container .title {
+    margin-bottom: 15px;
 }
 
 .video-container {
@@ -70,7 +76,7 @@ ul {  list-style: none;  }
 .video-container .video-item .video-img {
     width: 100%;
 }
-.video-container .video-item .video-title {
+.video-title {
     color: orange;
     padding: 5px 10px;
     min-height: 40px;

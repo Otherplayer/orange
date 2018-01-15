@@ -17,11 +17,13 @@
               <div class="row login-container" v-show="!user.token">
                 <!-- Each "cell" has col-[widht in percents] class -->
                 <div class="col-50" @click="loginAction">
-                  <img class="icon" src="./assets/1.jpg" />
+                  <!--<img class="icon" src="./assets/1.jpg" />-->
+                  <i class="f7-icons">person_fill</i>
                   <div class="title">{{(user.name && user.name != 'undefined' && user.name.length > 0) ? user.name : 'Log in'}}</div>
                 </div>
                 <div class="col-50" @click="signUpAction">
-                  <img class="icon" src="./assets/1.jpg" />
+                  <!--<img class="icon" src="./assets/1.jpg" />-->
+                  <i class="f7-icons">compose_fill</i>
                   <div class="title">Sign up</div>
                 </div>
               </div>
@@ -112,6 +114,9 @@
                 </div>
             </div>
 
+
+            <div>is the big xxx webseit</div>
+            <div>is the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webseit</div>
             <!--<f7-block-title>Navigation</f7-block-title>-->
             <!--<f7-list>-->
               <!--<f7-list-item link="/video/abc" title="Video"></f7-list-item>-->
@@ -157,9 +162,12 @@
               </f7-nav-right>
             </f7-navbar>
 
-            <video id='my-video' controls = 'controls' type='video/mp4' style="width: 100%; height: 400px;">
-              <source v-bind:src="infor.videoUrl" />
+            <video id='my-video' controls = 'controls' type='video/mp4' style="width: 100%; height: auto;">
+              <!--<source v-bind:src="infor.videoUrl" />-->
+              <source src="https://cv.phncdn.com/videos/201801/02/148248372/720P_1500K_148248372.mp4?a5dcae8e1adc0bdaed975f0d66fb5e0568d9f5b553250a40db604034853fa0906616b9adfa700a2024514adaa6f32eb0e5eac55560c5a25e74f8e2f283b73f45af97e29f292b76ab65b470fd8b95bef8fb7f162411a38c7484ea298fb603c2f827faf2d4019906fab1b1b02fbff2e7dd06c76ae3c2de53af0cd640fb7a" />
             </video>
+
+            <div class="video-title">{{infor.title}}</div>
 
           </f7-page>
         </f7-pages>
@@ -182,9 +190,9 @@ export default {
             themes: 'theme-white theme-black theme-yellow theme-red theme-blue theme-green theme-pink theme-lightblue theme-orange theme-gray',
             layouts: 'layout-dark layout-white',
             categories:[
-                {title:'Porn Videos',icon:'static/img/1.1550254.jpg',isopen:false,sub:[{title:'1'},{title:'2'},{title:'3'}]},
+                {title:'Porn Videos',icon:'static/img/1.1550254.jpg',isopen:false,sub:[{title:'Top Rated'},{title:'Hottest'},{title:'Most Viewed'},{title:'Recommended'}]},
                 {title:'Playlists',icon:'static/img/1.1550254.jpg',sub:[]},
-                {title:'Categories',icon:'static/img/1.1550254.jpg',isopen:false,sub:[{title:'1'},{title:'2'},{title:'3'}]},
+                {title:'Categories',icon:'static/img/1.1550254.jpg',isopen:false,sub:[{title:'Lesbian'},{title:'Mature'},{title:'Japanese'}]},
                 {title:'Channels',icon:'static/img/1.1550254.jpg',sub:[]},
                 {title:'Pornstars',icon:'static/img/1.1550254.jpg',sub:[]},
                 {title:'Pornhub Select',icon:'static/img/1.1550254.jpg',sub:[]},
