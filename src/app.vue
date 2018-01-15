@@ -121,13 +121,11 @@
                 <f7-link close-popup>Close</f7-link>
               </f7-nav-right>
             </f7-navbar>
-            <f7-block>
 
-              <video id='my-video' controls = 'controls' type='video/mp4' style="width: 100%; height: 400px;">
-                <source v-bind:src="infor.videoUrl" />
-              </video>
+            <video id='my-video' controls = 'controls' type='video/mp4' style="width: 100%; height: 400px;">
+              <source v-bind:src="infor.videoUrl" />
+            </video>
 
-            </f7-block>
           </f7-page>
         </f7-pages>
       </f7-view>
