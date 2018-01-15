@@ -59,7 +59,11 @@
                     f7.hideIndicator();
                     if (data.retCode === '0000000') {
 
-                        f7.return();
+                        var token = data.token;
+                        var username = data.username;
+
+
+                        f7.views.main.router.back();
                     }else {
                         f7.alert(data.retInfo,'tip');
                     }

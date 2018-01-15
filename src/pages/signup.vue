@@ -95,8 +95,10 @@
 
                     f7.hideIndicator();
                     if (data.retCode === '0000000') {
+                        f7.alert('sign up success','Congratulation',function () {
+                            f7.views.main.router.back();
+                        });
 
-                        f7.return();
                     }else {
                         f7.alert(data.retInfo,'tip');
                     }
