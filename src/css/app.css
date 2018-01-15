@@ -21,6 +21,18 @@ ul {  list-style: none;  }
 }
 
 
+.info-container {
+    padding-top: 20px;
+    background-color: black;
+}
+.categories-title.content-block-title {
+    margin: 10px 10px 0;
+}
+.categories-container {
+
+}
+
+
 .login-container {
     text-align: center;
     color: orange;

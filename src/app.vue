@@ -9,10 +9,10 @@
     <!-- Left Panel -->
     <f7-panel left cover layout="dark">
       <f7-view id="left-panel-view" navbar-through :dynamic-navbar="true">
-        <f7-navbar title="Left Panel" sliding></f7-navbar>
+        <f7-navbar title="ORANGE" sliding></f7-navbar>
         <f7-pages>
           <f7-page>
-            <f7-block inner>
+            <div class="info-container" inner>
               <!--// user information-->
               <div class="row login-container" v-show="!user.token">
                 <!-- Each "cell" has col-[widht in percents] class -->
@@ -33,10 +33,10 @@
                 </div>
               </div>
 
-            </f7-block>
+            </div>
             <!--// categories-->
-            <div class="content-block-title">MAIN</div>
-            <div class="list-block media-list">
+            <div class="categories-title content-block-title">MAIN</div>
+            <div class="categories-container list-block media-list">
               <ul>
                 <li v-for="(category, index) in categories" @click="didClickCategory(category,index)">
                   <div class="item-content">
@@ -61,7 +61,8 @@
                     </li>
                   </ul>
                 </li>
-                <li>
+                <!--<li class="item-divider">&nbsp;</li>-->
+                <li v-show="user.token">
                   <div class="item-content">
                     <div class="item-media"><img src="./assets/1.jpg" width="22"></div>
                     <div class="item-inner" @click="logoutAction">
