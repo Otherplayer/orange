@@ -65,22 +65,30 @@
                         </div>
                       </div>
                     </li>
+                    <li></li>
                   </ul>
                 </li>
-                <!--<li class="item-divider">&nbsp;</li>-->
-                <li v-show="user.token">
+              </ul>
+            </div>
+            <div class="categories-title content-block-title">EXTRAS</div>
+            <div class="categories-container list-block media-list">
+              <ul>
+                <li>
                   <div class="item-content">
-                    <div class="item-media"><img src="./assets/1.jpg" width="22"></div>
-                    <div class="item-inner" @click="logoutAction">
+                    <div class="item-media">
+                      <i class="f7-icons category-icon">settings</i>
+                    </div>
+                    <div class="item-inner">
                       <div class="item-title-row">
-                        <div class="item-subtitle">Log out</div>
-                        <i class="f7-icons category-icon">logout</i>
+                        <div class="item-subtitle">Settings</div>
                       </div>
                     </div>
                   </div>
                 </li>
+                <li></li>
               </ul>
             </div>
+
 
           </f7-page>
         </f7-pages>
@@ -191,12 +199,12 @@ export default {
             themes: 'theme-white theme-black theme-yellow theme-red theme-blue theme-green theme-pink theme-lightblue theme-orange theme-gray',
             layouts: 'layout-dark layout-white',
             categories:[
-                {title:'Porn Videos',icon:'videocam',isopen:false,sub:[{title:'Top Rated'},{title:'Hottest'},{title:'Most Viewed'},{title:'Recommended'}]},
-                {title:'Playlists',icon:'list',sub:[]},
-                {title:'Categories',icon:'drawer',isopen:false,sub:[{title:'Lesbian'},{title:'Mature'},{title:'Japanese'}]},
+                {title:'Videos',icon:'videocam',isopen:false,sub:[{title:'Most Recent'},{title:'Top Rated'},{title:'Hottest'},{title:'Most Viewed'},{title:'Longest'}]},
+                {title:'Categories',icon:'drawer',sub:[]},
                 {title:'Channels',icon:'social_rss',sub:[]},
+                {title:'Photos',icon:'camera',sub:[]},
                 {title:'Pornstars',icon:'star',sub:[]},
-                {title:'Pornhub Select',icon:'favorites',sub:[]},
+                {title:'Upgrade To Premium',icon:'check_round_fill',sub:[]},
                 ],
             user:{token:'',name:''},//用户信息
             infor:{videoUrl:''},//当前选择的视频信息
