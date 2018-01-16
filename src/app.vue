@@ -109,8 +109,13 @@
         <f7-pages>
           <f7-page>
 
+            <div class="banner-ad">
+              <a href="http://www.exoclick.com/?login=otherplayer">
+                <img src="http://www.exoclick.com/banners/468x120.gif" border="0">
+              </a>
+            </div>
 
-            <a href="http://www.exoclick.com/?login=otherplayer"><img src="http://www.exoclick.com/banners/468x120.gif" border="0" width="100%" height="auto"></a>
+
 
             <!-- Page Content -->
             <f7-block-title>Welcome to my App</f7-block-title>
