@@ -7,6 +7,10 @@ export default [
         path: '/signup/',
         component: require('./pages/signup.vue')
     },
+    {
+        path: '/settings/',
+        component: require('./pages/settings.vue')
+    },
   {
       path: '/about/',
       component: require('./pages/about.vue')

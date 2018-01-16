@@ -74,7 +74,7 @@
             <div class="categories-container list-block media-list">
               <ul>
                 <li>
-                  <div class="item-content">
+                  <div class="item-content" @click="gotoSettings">
                     <div class="item-media">
                       <i class="f7-icons category-icon">settings</i>
                     </div>
@@ -321,6 +321,10 @@ export default {
         gotoVideoPage: function (item,event) {
             this.infor = item;
             this.$f7.popup('.video-page');
+        },
+        gotoSettings: function () {
+            this.$f7.closePanel('left');
+            this.$f7.views.main.router.load({url: '/settings/'});
         },
         changeLayout: function (layout) {
             this.$$('body').removeClass(this.layouts).addClass(layout)
