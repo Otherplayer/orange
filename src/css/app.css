@@ -86,3 +86,14 @@ ul {  list-style: none;  }
     min-height: 40px;
 }
 
+.bottom-announce-title {
+    text-align: center;
+    color: #999999;
+    font-size: 18px;
+}
+.bottom-announce-detail {
+    text-align: center;
+    color: #666666;
+    font-size: 14px;
+    margin-bottom: 40px;
+}

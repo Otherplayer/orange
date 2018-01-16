@@ -90,8 +90,6 @@
     <!-- Main Views -->
     <f7-views layout='dark'>
       <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
-
-
         <!-- iOS Theme Navbar -->
         <f7-navbar>
           <f7-nav-left>
@@ -99,8 +97,6 @@
           </f7-nav-left>
           <f7-nav-center sliding><span class="nav-title-pre">ORA</span><span class="nav-title-after">NGE</span></f7-nav-center>
         </f7-navbar>
-
-
         <!-- Pages -->
         <f7-pages>
           <f7-page>
@@ -120,8 +116,8 @@
             </div>
 
 
-            <div>is the big xxx webseit</div>
-            <div>is the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webseit</div>
+            <div class="bottom-announce-title">is the big xxx webseit</div>
+            <div class="bottom-announce-detail">is the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webseit</div>
             <!--<f7-block-title>Navigation</f7-block-title>-->
             <!--<f7-list>-->
               <!--<f7-list-item link="/video/abc" title="Video"></f7-list-item>-->
