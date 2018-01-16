@@ -30,7 +30,8 @@
               <div class="row login-container" v-show="user.token">
                 <!-- Each "cell" has col-[widht in percents] class -->
                 <div class="col-100">
-                  <img class="icon" src="./assets/1.jpg" />
+                  <!--<img class="icon" src="./assets/1.jpg" />-->
+                  <i class="f7-icons">person_fill</i>
                   <div class="title">{{user.name}}</div>
                 </div>
               </div>
@@ -42,11 +43,14 @@
               <ul>
                 <li v-for="(category, index) in categories" @click="didClickCategory(category,index)">
                   <div class="item-content">
-                    <div class="item-media"><img v-bind:src="category.icon" width="22"></div>
+                    <div class="item-media">
+                      <i class="f7-icons category-icon">{{category.icon}}</i>
+                      <!--<img v-bind:src="category.icon" width="22">-->
+                    </div>
                     <div class="item-inner">
                       <div class="item-title-row">
                         <div class="item-subtitle">{{category.title}}</div>
-                        <i v-show="category.sub.length > 0" class="f7-icons" style="font-size: 16px;padding-top: 5px;">down</i>
+                        <i v-show="category.sub.length > 0" class="f7-icons category-icon">down</i>
                       </div>
                     </div>
                   </div>
@@ -70,6 +74,7 @@
                     <div class="item-inner" @click="logoutAction">
                       <div class="item-title-row">
                         <div class="item-subtitle">Log out</div>
+                        <i class="f7-icons category-icon">logout</i>
                       </div>
                     </div>
                   </div>
@@ -190,12 +195,12 @@ export default {
             themes: 'theme-white theme-black theme-yellow theme-red theme-blue theme-green theme-pink theme-lightblue theme-orange theme-gray',
             layouts: 'layout-dark layout-white',
             categories:[
-                {title:'Porn Videos',icon:'static/img/1.1550254.jpg',isopen:false,sub:[{title:'Top Rated'},{title:'Hottest'},{title:'Most Viewed'},{title:'Recommended'}]},
-                {title:'Playlists',icon:'static/img/1.1550254.jpg',sub:[]},
-                {title:'Categories',icon:'static/img/1.1550254.jpg',isopen:false,sub:[{title:'Lesbian'},{title:'Mature'},{title:'Japanese'}]},
-                {title:'Channels',icon:'static/img/1.1550254.jpg',sub:[]},
-                {title:'Pornstars',icon:'static/img/1.1550254.jpg',sub:[]},
-                {title:'Pornhub Select',icon:'static/img/1.1550254.jpg',sub:[]},
+                {title:'Porn Videos',icon:'videocam',isopen:false,sub:[{title:'Top Rated'},{title:'Hottest'},{title:'Most Viewed'},{title:'Recommended'}]},
+                {title:'Playlists',icon:'list',sub:[]},
+                {title:'Categories',icon:'drawer',isopen:false,sub:[{title:'Lesbian'},{title:'Mature'},{title:'Japanese'}]},
+                {title:'Channels',icon:'social_rss',sub:[]},
+                {title:'Pornstars',icon:'star',sub:[]},
+                {title:'Pornhub Select',icon:'favorites',sub:[]},
                 ],
             user:{token:'',name:''},//用户信息
             infor:{videoUrl:''},//当前选择的视频信息
