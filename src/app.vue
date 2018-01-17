@@ -124,22 +124,13 @@
 
             <div class="category2-container">
               <div class="category2-item" v-for="(item, index) in videos">
-                <div class="category2-row" v-on:click="gotoVideoPage(item[0])">
-                  <div class="category2-time">{{ item[0].durationStr }}</div>
-                  <img class="category2-img" v-bind:src="item[0].imageUrl">
-                  <div class="category2-title">{{ item[0].title }}</div>
+                <div class="category2-row" v-for="(subItem,subIndex) in item" v-on:click="gotoVideoPage(subItem)">
+                  <div class="category2-time">{{ subItem.durationStr }}</div>
+                  <img class="category2-img" v-bind:src="subItem.imageUrl">
+                  <div class="category2-title">{{ subItem.title }}</div>
                   <div class="category2-detail">
-                    <span class="c2-left"><i class="f7-icons">eye_fill</i>{{item[0].views}}</span>
-                    <span class="c2-right"><i class="f7-icons">heart_fill</i>{{item[0].rating + '%'}}</span>
-                  </div>
-                </div>
-                <div class="category2-row" v-on:click="gotoVideoPage(item[1])">
-                  <div class="category2-time">{{ item[1].durationStr }}</div>
-                  <img class="category2-img" v-bind:src="item[1].imageUrl" />
-                  <div class="category2-title">{{ item[1].title }}</div>
-                  <div class="category2-detail">
-                    <span class="c2-left"><i class="f7-icons">eye_fill</i>{{item[0].views}}</span>
-                    <span class="c2-right"><i class="f7-icons">heart_fill</i>{{item[0].rating + '%'}}</span>
+                    <span class="c2-left"><i class="f7-icons">eye_fill</i>{{subItem.views}}</span>
+                    <span class="c2-right"><i class="f7-icons">heart_fill</i>{{subItem.rating + '%'}}</span>
                   </div>
                 </div>
               </div>
@@ -289,6 +280,11 @@ export default {
         didClickCategory: function (category, index) {
             if (index >= 0) {
                 this.categories[index].isopen = !this.categories[index].isopen;
+                if (index === 1) {
+                    this.$f7.closePanel('left');
+                    this.$f7.views.main.router.loadPage({url: '/category3/'});
+                }
+
             }else{
                 this.$f7.closePanel('left');
                 this.$f7.views.main.router.loadPage({url: '/category2/'});

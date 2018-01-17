@@ -15,6 +15,10 @@ export default [
         path: '/category2/',
         component: require('./pages/category2.vue')
     },
+    {
+        path: '/category3/',
+        component: require('./pages/category3.vue')
+    },
   {
       path: '/about/',
       component: require('./pages/about.vue')
