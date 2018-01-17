@@ -126,7 +126,7 @@
               <div class="category2-item" v-for="(item, index) in videos">
                 <div class="category2-row" v-for="(subItem,subIndex) in item" v-on:click="gotoVideoPage(subItem)">
                   <div class="category2-time">{{ subItem.durationStr }}</div>
-                  <img class="category2-img" v-bind:src="subItem.imageUrl">
+                  <!--<img class="category2-img" v-bind:src="subItem.imageUrl">-->
                   <div class="category2-title">{{ subItem.title }}</div>
                   <div class="category2-detail">
                     <span class="c2-left"><i class="f7-icons">eye_fill</i>{{subItem.views}}</span>

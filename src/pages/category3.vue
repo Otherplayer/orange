@@ -11,7 +11,7 @@
         <div class="category3-container">
             <div class="category3-item" v-for="(item, index) in videos">
                 <div class="category3-row" v-for="(subItem,subIndex) in item" v-on:click="gotoVideoPage(subItem)">
-                    <img class="category3-img" v-bind:src="subItem.imageUrl">
+                    <!--<img class="category3-img" v-bind:src="subItem.imageUrl">-->
                     <div class="category3-title">{{ subItem.title }}</div>
                 </div>
             </div>
