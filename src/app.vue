@@ -269,13 +269,13 @@ export default {
     methods: {
         loginAction: function () {
             this.$f7.closePanel('left');
-            this.$f7.views.main.router.load({url: '/signin/'});
+            this.$f7.views.main.router.loadPage({url: '/signin/'});
             //this.$f7.mainView.router
             console.log(this.token);
         },
         signUpAction: function () {
             this.$f7.closePanel('left');
-            this.$f7.views.main.router.load({url: '/signup/'});
+            this.$f7.views.main.router.loadPage({url: '/signup/'});
         },
         logoutAction: function () {
 
@@ -291,12 +291,13 @@ export default {
 
         },
         gotoVideoPage: function (item,event) {
-            this.infor = item;
-            this.$f7.popup('.video-page');
+            // this.infor = item;
+            // this.$f7.popup('.video-page');
+            this.$f7.views.main.router.loadPage({url: '/video/' ,params: item});
         },
         gotoSettings: function () {
             this.$f7.closePanel('left');
-            this.$f7.views.main.router.load({url: '/settings/'});
+            this.$f7.views.main.router.loadPage({url: '/settings/'});
         },
         changeLayout: function (layout) {
             this.$$('body').removeClass(this.layouts).addClass(layout)

@@ -1,17 +1,50 @@
 <template>
   <f7-page>
-    <f7-navbar title="Video" back-link="Back" sliding></f7-navbar>
+    <f7-navbar title="Dynamic Route" back-link="Back" sliding></f7-navbar>
     <f7-block inner>
-      <p>Show Time!</p>
-      <p>You can go <f7-link back>back</f7-link>.</p>
-      <p>Mauris posuere sit amet metus id venenatis. Ut ante dolor, tempor nec commodo rutrum, varius at sem. Nullam ac nisi non neque ornare pretium. Nulla mauris mauris, consequat et elementum sit amet, egestas sed orci. In hac habitasse platea dictumst.</p>
-      <p>Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.</p>
+      <ul>
+        <li><b>Url:</b> {{$route.url}}</li>
+        <li><b>Path:</b> {{$route.path}}</li>
+        <li><b>Hash:</b> {{$route.hash}}</li>
+        <li><b>Params:</b>
+          <ul>
+            <li v-for="(value, key) in $route.params"><b>{{key}}:</b> {{value}}</li>
+          </ul>
+        </li>
+        <li><b>Query:</b>
+          <ul>
+            <li v-for="(value, key) in $route.query"><b>{{key}}:</b> {{value}}</li>
+          </ul>
+        </li>
+        <li><b>Route:</b> {{$route.route.path}}</li>
+      </ul>
     </f7-block>
+    <f7-block inner>
+      <f7-link @click="$route.view.router.back()">Go back via Router API</f7-link>
+    </f7-block>
+
   </f7-page>
 </template>
+
 <script>
+    export default {
+        data () {
+            return {
 
-export default {
+            }
+        },
+        created() {
 
-}
+        },
+        mounted : function () {
+            // Change Theme Color
+            // self.$router.back()
+            console.log(this.$route);
+            console.log('params:',this.$route.params);
+            console.log('options.',this.$route.options.params);
+        },
+        methods: {
+
+        }
+    }
 </script>

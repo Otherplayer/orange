@@ -16,7 +16,8 @@ export default [
       component: require('./pages/about.vue')
   },
     {
-        path: '/video/:url/',
+        path: '/video/',
+        pa:{},
         component: require('./pages/video.vue')
     },
   {
