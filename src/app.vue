@@ -124,7 +124,8 @@
 
             <div class="category2-container">
               <div class="category2-item" v-for="(item, index) in videos">
-                <div class="category2-row">
+                <div class="category2-row" v-on:click="gotoVideoPage(item[0])">
+                  <div class="category2-time">{{ item[0].durationStr }}</div>
                   <img class="category2-img" v-bind:src="item[0].imageUrl">
                   <div class="category2-title">{{ item[0].title }}</div>
                   <div class="category2-detail">
@@ -132,8 +133,9 @@
                     <span class="c2-right"><i class="f7-icons">heart_fill</i>{{item[0].rating + '%'}}</span>
                   </div>
                 </div>
-                <div class="category2-row">
-                  <img class="category2-img" v-bind:src="item[1].imageUrl">
+                <div class="category2-row" v-on:click="gotoVideoPage(item[1])">
+                  <div class="category2-time">{{ item[1].durationStr }}</div>
+                  <img class="category2-img" v-bind:src="item[1].imageUrl" />
                   <div class="category2-title">{{ item[1].title }}</div>
                   <div class="category2-detail">
                     <span class="c2-left"><i class="f7-icons">eye_fill</i>{{item[0].views}}</span>
@@ -269,7 +271,7 @@ export default {
             })
 
         },
-        gotoVideoPage: function (item,event) {
+        gotoVideoPage: function (item) {
             // this.infor = item;
             // this.$f7.popup('.video-page');
             this.$f7.views.main.router.loadPage({url: '/video/' ,params: item});
