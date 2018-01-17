@@ -166,27 +166,27 @@
 
 
     <!-- 视频播放页面 -->
-    <f7-popup id="popup" class="video-page">
-      <f7-view navbar-fixed>
-        <f7-pages>
-          <f7-page>
-            <f7-navbar title="Popup">
-              <f7-nav-right>
-                <f7-link close-popup>Close</f7-link>
-              </f7-nav-right>
-            </f7-navbar>
+    <!--<f7-popup id="popup" class="video-page">-->
+      <!--<f7-view navbar-fixed>-->
+        <!--<f7-pages>-->
+          <!--<f7-page>-->
+            <!--<f7-navbar title="Popup">-->
+              <!--<f7-nav-right>-->
+                <!--<f7-link close-popup>Close</f7-link>-->
+              <!--</f7-nav-right>-->
+            <!--</f7-navbar>-->
 
-            <video id='my-video' controls = 'controls' type='video/mp4' style="width: 100%; height: auto;">
-              <!--<source v-bind:src="infor.videoUrl" />-->
-              <source src="https://cv.phncdn.com/videos/201801/02/148248372/720P_1500K_148248372.mp4?a5dcae8e1adc0bdaed975f0d66fb5e0568d9f5b553250a40db604034853fa0906616b9adfa700a2024514adaa6f32eb0e5eac55560c5a25e74f8e2f283b73f45af97e29f292b76ab65b470fd8b95bef8fb7f162411a38c7484ea298fb603c2f827faf2d4019906fab1b1b02fbff2e7dd06c76ae3c2de53af0cd640fb7a" />
-            </video>
+            <!--<video id='my-video' controls = 'controls' type='video/mp4' style="width: 100%; height: auto;">-->
+              <!--&lt;!&ndash;<source v-bind:src="infor.videoUrl" />&ndash;&gt;-->
+              <!--<source src="https://cv.phncdn.com/videos/201801/02/148248372/720P_1500K_148248372.mp4?a5dcae8e1adc0bdaed975f0d66fb5e0568d9f5b553250a40db604034853fa0906616b9adfa700a2024514adaa6f32eb0e5eac55560c5a25e74f8e2f283b73f45af97e29f292b76ab65b470fd8b95bef8fb7f162411a38c7484ea298fb603c2f827faf2d4019906fab1b1b02fbff2e7dd06c76ae3c2de53af0cd640fb7a" />-->
+            <!--</video>-->
 
-            <div class="video-title">{{infor.title}}</div>
+            <!--<div class="video-title">{{infor.title}}</div>-->
 
-          </f7-page>
-        </f7-pages>
-      </f7-view>
-    </f7-popup>
+          <!--</f7-page>-->
+        <!--</f7-pages>-->
+      <!--</f7-view>-->
+    <!--</f7-popup>-->
 
 
 
@@ -246,25 +246,18 @@ export default {
         this.changeLayout('layout-dark');
         this.changeColor('theme-orange');
         // DOM events for About popup
-        this.$$('.video-page').on('popup:open', function (e, popup) {
-            console.log('About popup open');
-        });
-        this.$$('.video-page').on('popup:opened', function (e, popup) {
-            console.log('About popup opened');
-        });
-        this.$$('.video-page').on('popup:close', function (e, popup) {
-            console.log('About popup close');
-        });
-        this.$$('.video-page').on('popup:closed', function (e, popup) {
-            console.log('About popup closed');
-        });
-        var testVideo = fluidPlayer(
-            'my-video',
-            '',
-            {
-                layout:'browser',
-            }
-        );
+        // this.$$('.video-page').on('popup:open', function (e, popup) {
+        //     console.log('About popup open');
+        // });
+        // this.$$('.video-page').on('popup:opened', function (e, popup) {
+        //     console.log('About popup opened');
+        // });
+        // this.$$('.video-page').on('popup:close', function (e, popup) {
+        //     console.log('About popup close');
+        // });
+        // this.$$('.video-page').on('popup:closed', function (e, popup) {
+        //     console.log('About popup closed');
+        // });
     },
     methods: {
         loginAction: function () {
