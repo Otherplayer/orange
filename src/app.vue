@@ -107,61 +107,70 @@
         </f7-navbar>
         <!-- Pages -->
         <f7-pages>
-          <f7-page>
 
+
+          <f7-page infinite-scroll @infinite="onInfiniteScroll">
+            <f7-navbar title="My App"></f7-navbar>
+
+            <!--// ad banner-->
             <div class="banner-ad">
               <a href="http://www.exoclick.com/?login=otherplayer">
                 <img src="http://www.exoclick.com/banners/468x120.gif" border="0">
               </a>
             </div>
 
-
-
-            <!-- Page Content -->
-            <f7-block-title>Welcome to my App</f7-block-title>
-            <f7-block inner>
-              <p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>
-            </f7-block>
-
-
             <div class="video-container">
-                <div class="video-item" v-for="(item, index) in videos" v-on:click="gotoVideoPage(item)">
-                     <img class="video-img" v-bind:src="item.imageUrl">
-                     <div class="video-title">{{ item.title }}</div>
-                </div>
+              <div class="video-item" v-for="(item, index) in videos" v-on:click="gotoVideoPage(item)">
+                <!--<img class="video-img" v-bind:src="item.imageUrl">-->
+                <div class="video-title">{{ item.title }}</div>
+              </div>
             </div>
 
 
-            <div class="bottom-announce-title">is the big xxx webseit</div>
-            <div class="bottom-announce-detail">is the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webseit</div>
-            <!--<f7-block-title>Navigation</f7-block-title>-->
-            <!--<f7-list>-->
-              <!--<f7-list-item link="/video/abc" title="Video"></f7-list-item>-->
-              <!--<f7-list-item link="/form/" title="Form"></f7-list-item>-->
-              <!--<f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>-->
-            <!--</f7-list>-->
-            <!--<f7-block-title>Side Panels</f7-block-title>-->
-            <!--<f7-block>-->
-              <!--<f7-grid>-->
-                <!--<f7-col width="50">-->
-                  <!--<f7-button open-panel="left">Left Panel</f7-button>-->
-                <!--</f7-col>-->
-                <!--<f7-col width="50">-->
-                  <!--<f7-button open-panel="right">Right Panel</f7-button>-->
-                <!--</f7-col>-->
-              <!--</f7-grid>-->
-            <!--</f7-block>-->
-            <!--<f7-block-title>Modals</f7-block-title>-->
-            <!--<f7-block>-->
-              <!--<f7-grid>-->
-                <!--<f7-col width="50">-->
-                  <!--<f7-button open-popup="#popup">Popup</f7-button>-->
-                <!--</f7-col>-->
-              <!--</f7-grid>-->
-            <!--</f7-block>-->
-
-
           </f7-page>
+
+
+          <!--<f7-page>-->
+
+
+
+
+
+            <!--&lt;!&ndash; Page Content &ndash;&gt;-->
+            <!--<f7-block-title>Welcome to my App</f7-block-title>-->
+            <!--<f7-block inner>-->
+              <!--<p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>-->
+            <!--</f7-block>-->
+
+
+            <!--&lt;!&ndash;<f7-block-title>Navigation</f7-block-title>&ndash;&gt;-->
+            <!--&lt;!&ndash;<f7-list>&ndash;&gt;-->
+              <!--&lt;!&ndash;<f7-list-item link="/video/abc" title="Video"></f7-list-item>&ndash;&gt;-->
+              <!--&lt;!&ndash;<f7-list-item link="/form/" title="Form"></f7-list-item>&ndash;&gt;-->
+              <!--&lt;!&ndash;<f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>&ndash;&gt;-->
+            <!--&lt;!&ndash;</f7-list>&ndash;&gt;-->
+            <!--&lt;!&ndash;<f7-block-title>Side Panels</f7-block-title>&ndash;&gt;-->
+            <!--&lt;!&ndash;<f7-block>&ndash;&gt;-->
+              <!--&lt;!&ndash;<f7-grid>&ndash;&gt;-->
+                <!--&lt;!&ndash;<f7-col width="50">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<f7-button open-panel="left">Left Panel</f7-button>&ndash;&gt;-->
+                <!--&lt;!&ndash;</f7-col>&ndash;&gt;-->
+                <!--&lt;!&ndash;<f7-col width="50">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<f7-button open-panel="right">Right Panel</f7-button>&ndash;&gt;-->
+                <!--&lt;!&ndash;</f7-col>&ndash;&gt;-->
+              <!--&lt;!&ndash;</f7-grid>&ndash;&gt;-->
+            <!--&lt;!&ndash;</f7-block>&ndash;&gt;-->
+            <!--&lt;!&ndash;<f7-block-title>Modals</f7-block-title>&ndash;&gt;-->
+            <!--&lt;!&ndash;<f7-block>&ndash;&gt;-->
+              <!--&lt;!&ndash;<f7-grid>&ndash;&gt;-->
+                <!--&lt;!&ndash;<f7-col width="50">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<f7-button open-popup="#popup">Popup</f7-button>&ndash;&gt;-->
+                <!--&lt;!&ndash;</f7-col>&ndash;&gt;-->
+              <!--&lt;!&ndash;</f7-grid>&ndash;&gt;-->
+            <!--&lt;!&ndash;</f7-block>&ndash;&gt;-->
+
+
+          <!--</f7-page>-->
         </f7-pages>
       </f7-view>
     </f7-views>
@@ -214,34 +223,16 @@ export default {
                 {title:'Pornstars',icon:'star',sub:[]},
                 {title:'Upgrade To Premium',icon:'check_round_fill',sub:[]},
                 ],
+            loading: false,
             user:{token:'',name:''},//用户信息
             infor:{videoUrl:''},//当前选择的视频信息
-            videos: [
-                {
-                    "channelId": 1,
-                    "id": 39,
-                    "imageUrl": "http://d.hiphotos.baidu.com/image/h%3D300/sign=9af99ce45efbb2fb2b2b5e127f4b2043/a044ad345982b2b713b5ad7d3aadcbef76099b65.jpg",
-                    "sortDate": 1515943735000,
-                    "status": 1,
-                    "title": "Hot Teen Stepsister Stuck In Sink And Fucked",
-                    "typeId": 4,
-                    "videoUrl": "http://www.xvideos.com/video32776479/best-2018-01/0/hot_teen_stepsister_stuck_in_sink_and_fucked"
-                },
-                {
-                    "channelId": 1,
-                    "id": 40,
-                    "imageUrl": "http://d.hiphotos.baidu.com/image/h%3D300/sign=9af99ce45efbb2fb2b2b5e127f4b2043/a044ad345982b2b713b5ad7d3aadcbef76099b65.jpg",
-                    "sortDate": 1515943735000,
-                    "status": 1,
-                    "title": "Stranger Jerked and suck me in the train",
-                    "typeId": 4,
-                    "videoUrl": "http://www.xvideos.com/video32893295/best-2018-01/0/stranger_jerked_and_suck_me_in_the_train"
-                },
-            ]
+            channelId:'1',
+            currentPage: 1,
+            pageSize:10,
+            videos: []
         }
     },
     created() {
-
         //登录成功后刷新界面
         bus.$on('should-update-user-information', (user) => {
             console.log(user);
@@ -250,30 +241,19 @@ export default {
 
         this.user.token = this.$cookie.get('ph-user-token');
         this.user.name = this.$cookie.get('ph-user-name');
+        let self = this;
 
-
-        var app = new Framework7();
-        app.showIndicator();
-        var header =  {'Accept': 'application/json'};
-        this.$http.post('http://52.14.107.3:80/video/content/list',{channelId:'1'},header).then(response => {
-
-            // get body data
-            var datas = response.body.result.list;
-            //this.videos = datas;
-            console.log(datas);
-
-            app.hideIndicator();
-
-        }, response => {
-            // error callback
-            console.log(response.body);
-
-            app.hideIndicator();
-        });
-
+        self.fetchDatas(self.channelId,self.currentPage,function (datas) {
+            if (datas.length < self.pageSize) {
+                self.$f7.detachInfiniteScroll(self.$$('.infinite-scroll'));
+                self.$$('.infinite-scroll-preloader').remove();
+            }else{
+                self.currentPage = 2;
+            }
+            self.videos = datas;
+        })
     },
     mounted : function () {
-        console.log('mounted---');
         // Change Theme Color
         this.changeLayout('layout-dark');
         this.changeColor('theme-orange');
@@ -290,7 +270,6 @@ export default {
         this.$$('.video-page').on('popup:closed', function (e, popup) {
             console.log('About popup closed');
         });
-
         var testVideo = fluidPlayer(
             'my-video',
             '',
@@ -298,9 +277,6 @@ export default {
                 layout:'browser',
             }
         );
-
-
-
     },
     methods: {
         loginAction: function () {
@@ -344,6 +320,47 @@ export default {
             if (index >= 0) {
                 this.categories[index].isopen = !this.categories[index].isopen;
             }
+        },
+        fetchDatas:function (channelId,page,callback) {
+            let f7 = this.$f7;
+            var header =  {'Accept': 'application/json'};
+            this.$http.post('http://52.14.107.3:80/video/content/list',{channelId:channelId,page:page,rows:this.pageSize},header).then(response => {
+                // get body data
+                var datas = response.body.result.list;
+                if (datas && datas.length > 0) {
+                    callback(datas);
+                }else{
+                    callback([]);
+                }
+            }, response => {
+                // error callback
+                var data = response.body;
+                f7.alert(data.retInfo,'error');
+
+            });
+        },
+        onInfiniteScroll: function () {
+            if (this.loading) {
+                return;
+            }
+
+            this.loading = true;
+            let self = this;
+
+            self.fetchDatas('1',self.currentPage,function (datas) {
+                self.loading = false;
+                if (datas.length < self.pageSize) {
+                    self.$f7.detachInfiniteScroll(self.$$('.infinite-scroll'));
+                    self.$$('.infinite-scroll-preloader').remove();
+                }else{
+                    self.currentPage = self.currentPage + 1;
+                }
+
+                self.videos = self.videos.concat(datas);
+
+            });
+
+
         }
     },
     components : { hello }

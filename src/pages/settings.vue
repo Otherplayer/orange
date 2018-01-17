@@ -3,7 +3,10 @@
         <f7-navbar title="Settings" back-link="Back" sliding></f7-navbar>
         <f7-block inner>
             <div class="categories-title content-block-title">About</div>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;About</p>
+
+            <div class="bottom-announce-title">is the big xxx webseit</div>
+            <div class="bottom-announce-detail">is the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webses the big xxx webseit</div>
+
             <div class="categories-title content-block-title">App Version</div>
             <p> &nbsp;&nbsp;&nbsp;&nbsp;4.3.1</p>
 
@@ -14,6 +17,8 @@
                     <f7-col><f7-button fill raised color="orange" @click="logoutAction">Log out</f7-button></f7-col>
                 </f7-grid>
             </p>
+
+
 
 
 
