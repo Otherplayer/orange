@@ -8,10 +8,16 @@
             </a>
         </div>
 
-        <div class="video-container">
-            <div class="video-item" v-for="(item, index) in videos" v-on:click="gotoVideoPage(item)">
-                <img class="video-img" v-bind:src="item.imageUrl">
-                <div class="video-title">{{ item.title }}</div>
+        <div class="category2-container">
+            <div class="category2-item" v-for="(item, index) in videos">
+                <div class="category2-row">
+                    <img class="category2-img" v-bind:src="item.imageUrl">
+                    <div class="category2-title">{{ item.title }}</div>
+                </div>
+                <div class="category2-row">
+                    <img class="category2-img" v-bind:src="item.imageUrl">
+                    <div class="category2-title">{{ item.title }}</div>
+                </div>
             </div>
         </div>
 

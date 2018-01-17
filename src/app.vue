@@ -107,8 +107,6 @@
         </f7-navbar>
         <!-- Pages -->
         <f7-pages>
-
-
           <f7-page infinite-scroll @infinite="onInfiniteScroll">
             <!--// ad banner-->
             <div class="banner-ad">
@@ -117,48 +115,37 @@
               </a>
             </div>
 
-            <div class="video-container">
-              <div class="video-item" v-for="(item, index) in videos" v-on:click="gotoVideoPage(item)">
-                <img class="video-img" v-bind:src="item.imageUrl">
-                <div class="video-title">{{ item.title }}</div>
+            <!--<div class="video-container">-->
+              <!--<div class="video-item" v-for="(item, index) in videos" v-on:click="gotoVideoPage(item)">-->
+                <!--<img class="video-img" v-bind:src="item.imageUrl">-->
+                <!--<div class="video-title">{{ item.title }}</div>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <div class="category2-container">
+              <div class="category2-item" v-for="(item, index) in videos">
+                <div class="category2-row">
+                  <img class="category2-img" v-bind:src="item[0].imageUrl">
+                  <div class="category2-title">{{ item[0].title }}</div>
+                  <div class="category2-detail">
+                    <span class="c2-left"><i class="f7-icons">eye_fill</i>{{item[0].views}}</span>
+                    <span class="c2-right"><i class="f7-icons">heart_fill</i>{{item[0].rating + '%'}}</span>
+                  </div>
+                </div>
+                <div class="category2-row">
+                  <img class="category2-img" v-bind:src="item[1].imageUrl">
+                  <div class="category2-title">{{ item[1].title }}</div>
+                  <div class="category2-detail">
+                    <span class="c2-left"><i class="f7-icons">eye_fill</i>{{item[0].views}}</span>
+                    <span class="c2-right"><i class="f7-icons">heart_fill</i>{{item[0].rating + '%'}}</span>
+                  </div>
+                </div>
               </div>
             </div>
 
+
+
           </f7-page>
-
-
-          <!--<f7-page>-->
-            <!--&lt;!&ndash; Page Content &ndash;&gt;-->
-            <!--<f7-block-title>Welcome to my App</f7-block-title>-->
-            <!--<f7-block inner>-->
-              <!--<p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>-->
-            <!--</f7-block>-->
-            <!--<f7-block-title>Navigation</f7-block-title>-->
-            <!--<f7-list>-->
-              <!--<f7-list-item link="/video/abc" title="Video"></f7-list-item>-->
-              <!--<f7-list-item link="/form/" title="Form"></f7-list-item>-->
-              <!--<f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>-->
-            <!--</f7-list>-->
-            <!--<f7-block-title>Side Panels</f7-block-title>-->
-            <!--<f7-block>-->
-              <!--<f7-grid>-->
-                <!--<f7-col width="50">-->
-                  <!--<f7-button open-panel="left">Left Panel</f7-button>-->
-                <!--</f7-col>-->
-                <!--<f7-col width="50">-->
-                  <!--<f7-button open-panel="right">Right Panel</f7-button>-->
-                <!--</f7-col>-->
-              <!--</f7-grid>-->
-            <!--</f7-block>-->
-            <!--<f7-block-title>Modals</f7-block-title>-->
-            <!--<f7-block>-->
-              <!--<f7-grid>-->
-                <!--<f7-col width="50">-->
-                  <!--<f7-button open-popup="#popup">Popup</f7-button>-->
-                <!--</f7-col>-->
-              <!--</f7-grid>-->
-            <!--</f7-block>-->
-          <!--</f7-page>-->
         </f7-pages>
       </f7-view>
     </f7-views>
@@ -213,7 +200,6 @@ export default {
                 ],
             loading: false,
             user:{token:'',name:''},//用户信息
-            infor:{videoUrl:''},//当前选择的视频信息
             channelId:'1',
             currentPage: 1,
             pageSize:10,
@@ -238,7 +224,7 @@ export default {
             }else{
                 self.currentPage = 2;
             }
-            self.videos = datas;
+            self.videos = self.dealDatas(datas);
         })
     },
     mounted : function () {
@@ -313,6 +299,7 @@ export default {
                 // get body data
                 var datas = response.body.result.list;
                 if (datas && datas.length > 0) {
+                    console.log(datas);
                     callback(datas);
                 }else{
                     callback([]);
@@ -323,6 +310,18 @@ export default {
                 f7.alert(data.retInfo,'error');
 
             });
+        },
+        dealDatas:function (datas) {
+            var results = [];
+            var tmp = [];
+            datas.forEach(function (currentValue, index, arr) {
+                tmp.push(currentValue);
+                if (index % 2 === 1 || index === arr.length - 1) {
+                    results.push(tmp);
+                    tmp = [];
+                }
+            });
+            return results;
         },
         onInfiniteScroll: function () {
             if (this.loading) {
@@ -341,7 +340,7 @@ export default {
                     self.currentPage = self.currentPage + 1;
                 }
 
-                self.videos = self.videos.concat(datas);
+                self.videos = self.videos.concat(self.dealDatas(datas));
 
             });
 
