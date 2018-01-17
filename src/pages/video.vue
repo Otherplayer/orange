@@ -35,11 +35,15 @@
             // self.$router.back()
 
             this.params = this.$route.options.params;
-            console.log(this.params);
-            var testVideo = fluidPlayer(
+            //console.log(this.params);
+            var ePlayer = fluidPlayer(
                 '18-video',
-                '', {
+                '',
+                {
                     layout:'browser',
+                    playerInitCallback: function() {
+                        console.log('Player "18-video" initiation called');
+                    },
                 }
             );
 
