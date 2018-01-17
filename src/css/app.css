@@ -94,6 +94,7 @@ ul {  list-style: none;  }
 }
 .video-player {
     width: 100%;
+    min-height: 320px;
     height: auto;
 }
 
