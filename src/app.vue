@@ -119,7 +119,7 @@
 
             <div class="video-container">
               <div class="video-item" v-for="(item, index) in videos" v-on:click="gotoVideoPage(item)">
-                <!--<img class="video-img" v-bind:src="item.imageUrl">-->
+                <img class="video-img" v-bind:src="item.imageUrl">
                 <div class="video-title">{{ item.title }}</div>
               </div>
             </div>
