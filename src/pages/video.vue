@@ -10,9 +10,9 @@
       </a>
     </div>
 
-    <video id='18-video' controls = 'controls' type='video/mp4' class="video-player">
+    <video id='18-video' controls class="video-player">
       <!--<source v-bind:src="params.videoUrl" />-->
-      <source src="http://www.baidu.com/" />
+      <source src="./../assets/pre-ad.mp4" type='video/mp4' />
     </video>
 
     <div class="video-title">{{params.title}}</div>
