@@ -81,6 +81,7 @@ ul {  list-style: none;  }
 
 .video-container {
     width: 100%;
+    height: 100%;
 }
 .video-container .video-item {
 
