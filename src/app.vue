@@ -301,6 +301,9 @@ export default {
         didClickCategory: function (category, index) {
             if (index >= 0) {
                 this.categories[index].isopen = !this.categories[index].isopen;
+            }else{
+                this.$f7.closePanel('left');
+                this.$f7.views.main.router.loadPage({url: '/category2/'});
             }
         },
         fetchDatas:function (channelId,page,callback) {

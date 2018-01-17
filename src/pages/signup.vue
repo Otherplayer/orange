@@ -3,10 +3,10 @@
         <f7-navbar title="REGISTER" back-link="Back" sliding></f7-navbar>
         <f7-login-screen-title>ORANGE</f7-login-screen-title>
         <f7-list form>
-            <f7-list-item>
-                <f7-label>Nickname</f7-label>
-                <f7-input type="text" placeholder="Nickname" v-model="info.nickname"></f7-input>
-            </f7-list-item>
+            <!--<f7-list-item>-->
+                <!--<f7-label>Nickname</f7-label>-->
+                <!--<f7-input type="text" placeholder="Nickname" v-model="info.nickname"></f7-input>-->
+            <!--</f7-list-item>-->
             <f7-list-item>
                 <f7-label>Username</f7-label>
                 <f7-input type="text" placeholder="Username" v-model="info.username"></f7-input>
@@ -19,14 +19,14 @@
                 <f7-label>E-mail</f7-label>
                 <f7-input type="email" placeholder="E-mail" v-model="info.email"></f7-input>
             </f7-list-item>
-            <f7-list-item>
-                <f7-label>Phone</f7-label>
-                <f7-input type="tel" placeholder="Phone" v-model="info.phone"></f7-input>
-            </f7-list-item>
-            <f7-list-item>
-                <f7-label>Birth time</f7-label>
-                <f7-input type="datetime-local" v-model="info.age"></f7-input>
-            </f7-list-item>
+            <!--<f7-list-item>-->
+                <!--<f7-label>Phone</f7-label>-->
+                <!--<f7-input type="tel" placeholder="Phone" v-model="info.phone"></f7-input>-->
+            <!--</f7-list-item>-->
+            <!--<f7-list-item>-->
+                <!--<f7-label>Birth time</f7-label>-->
+                <!--<f7-input type="datetime-local" v-model="info.age"></f7-input>-->
+            <!--</f7-list-item>-->
             <f7-list-item>
                 <f7-label>Gender</f7-label>
                 <f7-input type="select" v-model="info.gender">
@@ -67,7 +67,7 @@
 
 
                 let f7 = this.$f7;
-                if (this.info.nickname.length === 0) {
+                if (this.info.username.length === 0) {
                     f7.alert('Please input nickname first.','tip');
                     return;
                 }
@@ -79,10 +79,12 @@
                     f7.alert('Please input email.','tip');
                     return;
                 }
-                if (this.info.phone.length === 0) {
-                    f7.alert('Please input phone.','tip');
-                    return;
-                }
+
+                this.info.nickname = this.info.username;
+                // if (this.info.phone.length === 0) {
+                //     f7.alert('Please input phone.','tip');
+                //     return;
+                // }
 
                 f7.showIndicator();
                 var header =  {'Accept': 'application/json'};

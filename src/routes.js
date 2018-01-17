@@ -11,6 +11,10 @@ export default [
         path: '/settings/',
         component: require('./pages/settings.vue')
     },
+    {
+        path: '/category2/',
+        component: require('./pages/category2.vue')
+    },
   {
       path: '/about/',
       component: require('./pages/about.vue')
